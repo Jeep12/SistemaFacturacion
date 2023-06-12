@@ -1,0 +1,117 @@
+.wrapper {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: rgb(201, 197, 199);
+  background: radial-gradient(circle, rgba(201, 197, 199, 1) 0%, rgba(251, 253, 255, 1) 100%);
+
+}
+
+.wrapper .loginForm {
+  width: 60%;
+  height: 350px;
+  display: flex;
+  flex-direction: row;
+}
+
+
+
+
+.wrapper .loginForm form {
+  background-color: #344C66;
+  color: white;
+  padding: 5px;
+  text-align: center;
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+  font-family: 'Dongle', sans-serif;
+  font-family: 'Montserrat', sans-serif;
+  font-family: 'PT Sans', sans-serif;
+
+}
+
+.form {
+  font-size: 20px;
+}
+
+form label {
+  font-size: 10px;
+}
+
+input:focus {
+  outline: none;
+}
+
+form input {
+  width: 100%;
+  margin: auto;
+  height: 20px;
+}
+
+form .inputPassword {
+  display: flex;
+  flex-direction: row;
+  height: 20px;
+
+}
+form .inputPassword .change{
+  border: none;
+  background-color: #344c6600;
+  color: white;
+  font-size: 10px;
+
+}
+
+.inputPassword input {
+  height: 100%;
+
+}
+
+.inputPassword .btnChangePass {
+  border:  none;
+  color: white;
+  background-color: rgba(255, 0, 0, 0);
+  font-size: 9px;
+}
+
+
+
+
+form input[type="submit"] {
+  width: 200px;
+  margin-top: 30px;
+  background-color: #29ABE2;
+  border: none;
+  font-size: 10px;
+  color: white;
+}
+
+.optionsForm {
+  text-align: right;
+  font-size: 10px;
+  margin-top: 5px;
+
+}
+.registerLink {
+  width: 50px;
+  height: 10px;
+  padding: 5px;
+  text-decoration: none;
+  background-color: #29ABE2;
+  border: none;
+  font-size: 10px;
+  color: white;
+}
+.btnLoginFacebook {
+  width: 100%;
+  border: none;
+  font-size: 11px;
+}
+@media only screen and (max-width: 480px) {
+ .social{
+  display: none;
+ }
+}

@@ -1,0 +1,35 @@
+.padre {
+  background-color: white;
+  height: 350px;
+
+}
+.textWelcome{
+  font-size: 10px;
+  padding: 10px;
+}
+.contact {
+  width: 200px;
+  text-align: center;
+  padding-left: 0;
+
+  margin: auto;
+  list-style: none;
+  font-size: 10px;
+  padding: 10px;
+  font-size: 9px;
+  font-family: 'Dongle', sans-serif;
+  font-family: 'Montserrat', sans-serif;
+  font-family: 'PT Sans', sans-serif;
+}
+
+.contact h5 {
+  font-size: 15px;
+}
+
+.contact img {
+  width: 15px;
+}
+.wrapper-image {
+  width: 70%;
+  margin: auto;
+}

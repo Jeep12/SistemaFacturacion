@@ -1,0 +1,40 @@
+<div class="wrapper">
+
+
+  <div class="loginForm">
+    <div class="social slideInLeft">
+      <app-welcome></app-welcome>
+    </div>
+    <form class="slideInRight">
+      <h5><i class="fa-sharp fa-solid fa-user"></i> Registarse</h5>
+      <label for=""> <i class="fa-solid fa-envelope"></i> Email</label>
+      <input type="email">
+
+
+
+      <label for=""> <i class="fa-sharp fa-solid fa-lock"></i> Contraseña</label>
+      <div class="inputPassword">
+        <input type="password" id="passwordInput">
+        <i class="change" id="togglePassword" class="fa-sharp fa-solid fa-eye-slash"></i>
+      </div>
+
+      <label for=""> <i class="fa-sharp fa-solid fa-lock"></i> Repetir contraseña</label>
+      <div class="inputPassword">
+        <input type="password" id="repeatPasswordInput">
+        <i class="change" id="toggleRepeatPassword" class="fa-sharp fa-solid fa-eye-slash"></i>
+      </div>
+
+      <input type="submit" value="Registrarse">
+      <div class="optionsForm">
+        <a [routerLink]="['/login']">Volver a -> ingresar</a>
+        <hr>
+        <br>
+
+
+      </div>
+    </form>
+
+  </div>
+
+
+</div>

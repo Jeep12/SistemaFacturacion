@@ -1,0 +1,38 @@
+<div class="wrapper">
+
+
+  <div class="loginForm">
+    <div class="social slideInLeft">
+      <app-welcome></app-welcome>
+    </div>
+    <form action="#" class="slideInRight">
+      <h5><i class="fa-sharp fa-solid fa-user"></i> Ingresar</h5>
+      <label for=""> <i class="fa-solid fa-envelope"></i> Email</label>
+      <input type="email">
+
+
+
+      <label for=""> <i class="fa-sharp fa-solid fa-lock"></i> Contraseña</label>
+
+
+      <div class="inputPassword">
+        <input type="password" id="inputPassword">
+        <button class="change" id="changeType"><i id="icon" class="fa-sharp fa-solid fa-eye-slash"></i></button>
+      </div>
+
+      <input type="submit" value="Entrar">
+      <div class="optionsForm">
+        <a href="">Recuperar contraseña</a>
+        <br> <br>
+
+        <a [routerLink]="['/register']" class="registerLink"><i class="fa-sharp fa-solid fa-user-plus"></i> Registrarse</a>
+        <hr>
+        <button class="btnLoginFacebook" id="changeType">Ingresar con <i class="fa-brands fa-square-facebook"
+            style="color: #0656e0;"></i></button>
+      </div>
+    </form>
+
+  </div>
+
+
+</div>
