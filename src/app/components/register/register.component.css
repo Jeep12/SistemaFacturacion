@@ -101,13 +101,23 @@ form input[type="submit"] {
   border: none;
   font-size: 11px;
 }
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 600px)  {
   .social{
-   display: none;
-  }
-  .wrapper {
-    width: 400px;
-    height: 600px;
-    background-color: red;;
-  }
+ display: none;
+}
+form {
+ margin: auto;
+ height: 450px;
+}
+
+.wrapper .loginForm {
+  height: 550px;
+  width: 500px;
+}
+}
+@media only screen and (max-width: 1920px)  {
+
+ .wrapper .loginForm {
+   height: 450px;
+ }
 }

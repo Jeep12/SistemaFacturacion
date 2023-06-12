@@ -110,8 +110,24 @@ form input[type="submit"] {
   border: none;
   font-size: 11px;
 }
-@media only screen and (max-width: 480px) {
- .social{
+@media only screen and (max-width: 600px)  {
+   .social{
   display: none;
  }
+ form {
+  margin: auto;
+  height: 450px;
+ }
+ 
+ .wrapper .loginForm {
+   height: 550px;
+   width: 500px;
+ }
+ 
+}
+@media only screen and (max-width: 1920px)  {
+
+  .wrapper .loginForm {
+    height: 450px;
+  }
 }
