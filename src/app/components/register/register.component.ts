@@ -9,7 +9,7 @@ import { LoadScriptsService } from 'src/app/services/load-script.service';
 export class RegisterComponent implements OnInit {
   inputType: string = 'password';
   showPassword: boolean = false;
-  iconClass: string = 'fa-eye';
+  iconSrc: string = '../../../assets/images/eyeopen.png';
   constructor(loadScript: LoadScriptsService) {
    }
   ngOnInit(): void {
@@ -22,10 +22,7 @@ export class RegisterComponent implements OnInit {
   toggleInputType(): void {
     this.inputType = (this.inputType === 'password') ? 'text' : 'password';
     this.showPassword = !this.showPassword;
-    if(this.inputType=='password'){
-      this.iconClass = 'fa-eye';
-    }else {
-      this.iconClass = "fa-sharp fa-solid fa-eye-slash";
-    }
+    this.iconSrc = this.showPassword ? '../../../assets/images/eyeclose.png' : '../../../assets/images/eyeopen.png';
+
 }
 }

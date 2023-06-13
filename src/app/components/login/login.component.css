@@ -24,8 +24,17 @@
   font-size: 15px;
   color: white;
 }
+label {
+  width: 100%;
+  font-size: 15px;
+  display: inline;
 
 
+}
+label img {
+  width: 20px;
+  margin-top: -5px;
+}
 /*FORM  */
 .wrapperLogin-Register .wrapper-form form{
   color: white;
@@ -34,28 +43,21 @@
 /*DIV CONTAINER INPUT PASSWORD AND BUTTON CHANGE TYPE */
 .password-container{
   width: 400px;
-  position: relative;
+  display: flex;
+  flex-direction: row;
 }
 .password-container input[type="password"],
 .password-container input[type="text"]{
   width: 100%;
   box-sizing: border-box;
 }
-.fas{
-  position: absolute;
-  top: 28%;
-  right: 4%;
-  cursor: pointer;
-  color: lightgray;
+.imgEye{
+  background-color: white;
+  width: 20px;
+
 }
 
 
-/*BUTTON CHANGE TYPE  */
-.wrapper-form form .inputPassword button  {
-  background-color: none;
-  border: none;
-  color: #344C66;
-}
 
 .optionsForm{
   margin-top: 5px;

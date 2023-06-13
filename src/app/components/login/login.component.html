@@ -12,15 +12,15 @@
       <br>
 
 
-      <label for=""> <i class="fa-solid fa-envelope"></i> Email</label>
-      <input type="email">
+      <label for=""> <img src="../../../assets/images/email.png" alt="">  Email</label>
+      <input type="email" placeholder="Ingresar Email">
       <br>
       <br>
 
-      <label for=""> <i class="fa-sharp fa-solid fa-lock"></i> Contraseña</label>
+      <label for=""> <img src="../../../assets/images/candado.png" alt="">  Contraseña</label>
       <div class="password-container">
-        <input [type]="inputType" class="passwordIn">
-        <i class="fas colorEye" [ngClass]="{'fa-eye': !showPassword, 'fa-eye-slash': showPassword}" (click)="toggleInputType()"></i>
+        <input [type]="inputType" class="passwordIn" placeholder="Ingresar Contraseña">
+        <img [src]="iconSrc" (click)="toggleInputType()" alt="Password Toggle" class="imgEye">
       </div>
       <br>
 
@@ -37,10 +37,10 @@
         </div>
         <hr>
         <div>
-          <button class="btnOtherLogin" id="changeType"> <i class="fa-brands fa-square-facebook"style="color: #0656e0;"></i> &nbsp;Continuar con Facebook</button>
+          <button class="btnOtherLogin" > <i class="fa-brands fa-square-facebook"style="color: #0656e0;"></i> &nbsp;Continuar con Facebook</button>
           <br>
           <br>
-          <button class="btnOtherLogin" id="changeType"> <i class="fa-brands fa-google-plus" style="color: #df2626;"></i> &nbsp; Continuar con Google</button>
+          <button class="btnOtherLogin" > <i class="fa-brands fa-google-plus" style="color: #df2626;"></i> &nbsp; Continuar con Google</button>
 
         </div>
       </div>

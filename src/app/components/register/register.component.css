@@ -26,40 +26,36 @@
   color: white !important;
 
 }
+label {
+  width: 100%;
+  font-size: 15px;
+  display: inline;
 
+
+}
+label img {
+  width: 20px;
+  margin-top: -5px;
+}
 /*FORM  */
 .wrapperLogin-Register .wrapper-form form{
   color: white;
 }
-.contentPassword {
+.password-container{
+  width: 400px;
   display: flex;
   flex-direction: row;
-  align-items: center;
-  justify-content: center;
-}
-.password {
-  width: 90%;
-}
-.checkType {
-  background-color: green;
-  width: 10%;
-  height: 100%;
-}.password-container{
-  width: 400px;
-  position: relative;
 }
 .password-container input[type="password"],
 .password-container input[type="text"]{
   width: 100%;
   box-sizing: border-box;
 }
-.fas{
-  position: absolute;
-  top: 28%;
-  right: 4%;
-  cursor: pointer;
-  color: lightgray;
+.imgEye{
+  background-color: white;
+  width: 20px;
 }
+
 
 .optionsForm{
   margin-top: 5px;
