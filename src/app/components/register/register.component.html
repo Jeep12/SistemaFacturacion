@@ -1,40 +1,54 @@
-<div class="wrapper">
+<div class="wrapperLogin-Register">
+  <div class="wrapper-social">
+    <app-welcome></app-welcome>
+  </div>
+
+  <div class="wrapper-form">
+    <form action="#">
+      <br>
+
+      <h5><i class="fa-sharp fa-solid fa-user-plus"></i>  Registrarse</h5>
+      <br>
+      <br>
 
 
-  <div class="loginForm">
-    <div class="social slideInLeft">
-      <app-welcome></app-welcome>
-    </div>
-    <form class="slideInRight">
-      <h5><i class="fa-sharp fa-solid fa-user"></i> Registarse</h5>
       <label for=""> <i class="fa-solid fa-envelope"></i> Email</label>
       <input type="email">
-
-
+      <br>
+      <br>
 
       <label for=""> <i class="fa-sharp fa-solid fa-lock"></i> Contraseña</label>
-      <div class="inputPassword">
-        <input type="password" id="passwordInput">
-        <i class="change" id="togglePassword" class="fa-sharp fa-solid fa-eye-slash"></i>
-      </div>
 
-      <label for=""> <i class="fa-sharp fa-solid fa-lock"></i> Repetir contraseña</label>
-      <div class="inputPassword">
-        <input type="password" id="repeatPasswordInput">
-        <i class="change" id="toggleRepeatPassword" class="fa-sharp fa-solid fa-eye-slash"></i>
-      </div>
+      <div class="password-container">
 
-      <input type="submit" value="Registrarse">
+        <input [type]="inputType">
+        <i class="fas colorEye" [ngClass]="{'fa-eye': !showPassword, 'fa-eye-slash': showPassword}"
+          (click)="toggleInputType()"></i>
+      </div>
+      <br>
+
+      <label for=""> <i class="fa-sharp fa-solid fa-lock"></i> Repetir Contraseña</label>
+
+      <div class="password-container">
+
+        <input [type]="inputType">
+        <i class="fas colorEye" [ngClass]="{'fa-eye': !showPassword, 'fa-eye-slash': showPassword}"
+          (click)="toggleInputType()"></i>
+      </div>
+      <br>
+      <input type="submite" value="Registrarse" class="btnRegister">
+
       <div class="optionsForm">
-        <a [routerLink]="['/login']">Volver a -> ingresar</a>
-        <hr>
-        <br>
 
+        <div class="linkNavigation">
+          <button class="" [routerLink]="['/login']"> Volver al Login</button>
+        </div>
+        <hr>
 
       </div>
+
+
     </form>
 
   </div>
-
-
 </div>

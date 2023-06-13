@@ -1,27 +1,10 @@
-let btn = document.getElementById("changeType");
-btn.addEventListener("click", (e) => {
-  e.preventDefault();
-  let input = document.getElementById("inputPassword");
-  let toggleIcon = document.getElementById("icon");
-  if (input.type === 'password') {
-    input.type = 'text';
-    toggleIcon.classList.remove('fa-eye');
-    toggleIcon.classList.add('fa-eye-slash');
-  } else {
-    input.type = 'password';
-    toggleIcon.classList.remove('fa-eye-slash');
-    toggleIcon.classList.add('fa-eye');
-  };
+const passwordInputL = document.querySelectorAll(".passwordL")
 
-});
+let eyes = document.querySelectorAll(".eyeL");
 
-
-
-
-
-
-
-
-
-
-
+for(let i = 0;i<eyes.length;i++){
+    eyes[i].addEventListener("click", function(e){
+      const type = passwordInputL[i].getAttribute("type") === "password" ? "text" : "password";
+      passwordInputL[i].setAttribute("type", type)
+    });
+};

@@ -1,38 +1,52 @@
-<div class="wrapper">
+<div class="wrapperLogin-Register">
+  <div class="wrapper-social">
+    <app-welcome></app-welcome>
+  </div>
 
+  <div class="wrapper-form">
+    <form action="#">
+      <br>
 
-  <div class="loginForm">
-    <div class="social slideInLeft">
-      <app-welcome></app-welcome>
-    </div>
-    <form action="#" class="slideInRight">
       <h5><i class="fa-sharp fa-solid fa-user"></i> Ingresar</h5>
+      <br>
+      <br>
+
+
       <label for=""> <i class="fa-solid fa-envelope"></i> Email</label>
       <input type="email">
-
-
+      <br>
+      <br>
 
       <label for=""> <i class="fa-sharp fa-solid fa-lock"></i> Contraseña</label>
-
-
-      <div class="inputPassword">
-        <input type="password" id="inputPassword">
-        <button class="change" id="changeType"><i id="icon" class="fa-sharp fa-solid fa-eye-slash"></i></button>
+      <div class="password-container">
+        <input [type]="inputType" class="passwordIn">
+        <i class="fas colorEye" [ngClass]="{'fa-eye': !showPassword, 'fa-eye-slash': showPassword}" (click)="toggleInputType()"></i>
       </div>
+      <br>
+
 
       <input type="submit" value="Entrar">
-      <div class="optionsForm">
-        <a href="">Recuperar contraseña</a>
-        <br> <br>
 
-        <a [routerLink]="['/register']" class="registerLink"><i class="fa-sharp fa-solid fa-user-plus"></i> Registrarse</a>
+
+      <div class="optionsForm">
+        <div>
+          <a href="#">Recuperar contraseña</a>
+        </div>
+        <div class="linkNavigation">
+          <button class="butonRegisterLink" [routerLink]="['/register']" ><i class="fa-sharp fa-solid fa-user-plus"></i> Registrarse</button>
+        </div>
         <hr>
-        <button class="btnLoginFacebook" id="changeType">Ingresar con <i class="fa-brands fa-square-facebook"
-            style="color: #0656e0;"></i></button>
+        <div>
+          <button class="btnOtherLogin" id="changeType"> <i class="fa-brands fa-square-facebook"style="color: #0656e0;"></i> &nbsp;Continuar con Facebook</button>
+          <br>
+          <br>
+          <button class="btnOtherLogin" id="changeType"> <i class="fa-brands fa-google-plus" style="color: #df2626;"></i> &nbsp; Continuar con Google</button>
+
+        </div>
       </div>
+
+
     </form>
 
   </div>
-
-
 </div>
