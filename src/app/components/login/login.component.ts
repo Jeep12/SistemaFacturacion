@@ -6,12 +6,19 @@ import { LoadScriptsService } from 'src/app/services/load-script.service';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
+  showPreload: boolean = true;
+
 
   constructor(loadScript: LoadScriptsService) {
-    loadScript.load(['login']);
+
    }
 
   ngOnInit(): void {
+       // Simula una operación asincrónica que toma tiempo
+       setTimeout(() => {
+        this.showPreload = false; // Oculta el preloader después de 3 segundos (ajusta el tiempo según tus necesidades)
+      }, 3000);
+    }
   }
 
-}
+

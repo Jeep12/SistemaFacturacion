@@ -6,13 +6,15 @@ import { LoginComponent } from './components/login/login.component';
 import { LoadScriptsService } from './services/load-script.service';
 import { WelcomeComponent } from './components/welcome/welcome.component';
 import { RegisterComponent } from './components/register/register.component';
+import { PreLoaderComponent } from './components/pre-loader/pre-loader.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     WelcomeComponent,
-    RegisterComponent
+    RegisterComponent,
+    PreLoaderComponent
   ],
   imports: [
     BrowserModule,
