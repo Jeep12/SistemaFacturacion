@@ -33,6 +33,9 @@ body {
   animation-name: slideInRight;
   animation-duration: 1s;
   animation-fill-mode: both;
+  border-top-right-radius: 2.5px;
+  border-bottom-right-radius: 2.5px;
+
 }
 
 @media only screen and (max-width: 600px) {

@@ -4,7 +4,7 @@
   </div>
 
   <div class="wrapper-form">
-    <form action="#">
+    <form  (ngSubmit)="login()" [formGroup]="loginUser">
       <br>
 
       <h5><i class="fa-sharp fa-solid fa-user"></i> Ingresar</h5>
@@ -13,13 +13,13 @@
 
 
       <label for=""> <img src="../../../assets/images/email.png" alt="">  Email</label>
-      <input type="email" placeholder="Ingresar Email">
+      <input type="email" placeholder="Ingresar Email" formControlName="email">
       <br>
       <br>
 
       <label for=""> <img src="../../../assets/images/candado.png" alt="">  Contraseña</label>
       <div class="password-container">
-        <input [type]="inputType" class="passwordIn" placeholder="Ingresar Contraseña">
+        <input [type]="inputType" class="passwordIn" placeholder="Ingresar Contraseña" formControlName="password">
         <img [src]="iconSrc" (click)="toggleInputType()" alt="Password Toggle" class="imgEye">
       </div>
       <br>

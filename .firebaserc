@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "loginfirebase-6a71b": {
+      "hosting": {
+        "sistemaFacturacion": [
+          "loginfirebase-6a71b"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "loginfirebase-6a71b"
+  }
+}
