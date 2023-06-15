@@ -1,40 +1,52 @@
-<div class="wrapper">
+<div class="wrapperLogin-Register">
+  <div class="wrapper-social">
+    <app-welcome></app-welcome>
+  </div>
+
+  <div class="wrapper-form">
+    <form action="#">
+      <br>
+
+      <h5><img src="../../../assets/images/useradd.png" alt=""> Registrarse</h5>
+      <br>
+      <br>
 
 
-  <div class="loginForm">
-    <div class="social slideInLeft">
-      <app-welcome></app-welcome>
-    </div>
-    <form class="slideInRight">
-      <h5><i class="fa-sharp fa-solid fa-user"></i> Registarse</h5>
-      <label for=""> <i class="fa-solid fa-envelope"></i> Email</label>
-      <input type="email">
+      <label for=""> <img src="../../../assets/images/email.png" alt="">  Email</label>
+      <input type="email" placeholder="Ingresar Email">
+      <br>
+      <br>
 
+      <label for="">  <img src="../../../assets/images/candado.png" alt=""> Contraseña</label>
 
-
-      <label for=""> <i class="fa-sharp fa-solid fa-lock"></i> Contraseña</label>
-      <div class="inputPassword">
-        <input type="password" id="passwordInput">
-        <i class="change" id="togglePassword" class="fa-sharp fa-solid fa-eye-slash"></i>
+      <div class="password-container">
+        <input [type]="inputType" class="passwordIn" placeholder="Ingresar Contraseña">
+        <img [src]="iconSrc" (click)="toggleInputType()" alt="Password Toggle" class="imgEye">
       </div>
+      <br>
+      <br>
 
-      <label for=""> <i class="fa-sharp fa-solid fa-lock"></i> Repetir contraseña</label>
-      <div class="inputPassword">
-        <input type="password" id="repeatPasswordInput">
-        <i class="change" id="toggleRepeatPassword" class="fa-sharp fa-solid fa-eye-slash"></i>
+      <label for=""><img src="../../../assets/images/candado.png" alt=""> Repetir Contraseña</label>
+
+      <div class="password-container">
+        <input [type]="inputType" class="passwordIn" placeholder="Ingresar Contraseña">
+        <img [src]="iconSrc" (click)="toggleInputType()" alt="Password Toggle" class="imgEye">
       </div>
+      <br>
+      <br>
+      <input type="submite" value="Registrarse" class="btnRegister">
 
-      <input type="submit" value="Registrarse">
       <div class="optionsForm">
-        <a [routerLink]="['/login']">Volver a -> ingresar</a>
-        <hr>
-        <br>
 
+        <div class="linkNavigation">
+          <button class="" [routerLink]="['/login']"> Volver al Login</button>
+        </div>
+        <hr>
 
       </div>
+
+
     </form>
 
   </div>
-
-
 </div>
