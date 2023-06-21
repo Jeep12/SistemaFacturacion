@@ -1,57 +1,92 @@
 <div class="wrapper-nav">
 
-<div class="social">
-  <div class="logo">
-    <h1>Dur Cor</h1>
+  <div class="social">
+    <div class="logo">
+      <img src="../../../assets/images/logo.png" alt="" srcset="">
+    </div>
+    <div class="contact">
+      <ul>
+        <li style="text-decoration: underline;font-weight: bold;">Contacto</li>
+        <li><i class="fa-solid fa-envelope"></i> encabojuan@gmail.com</li>
+        <li><i class="fa-brands fa-whatsapp"></i>+54 011 2983-402258</li>
+      </ul>
+
+    </div>
+    <div class="socialNetworks">
+      <ul>
+        <li><i class="fa-brands fa-facebook-f"></i> Facebook</li>
+        <li><i class="fa-brands fa-google"></i> Google</li>
+        <li><i class="fa-brands fa-instagram"></i> Instagram</li>
+      </ul>
+    </div>
   </div>
-  <div class="contact">
-    <p><i class="fa-solid fa-envelope"></i> encabojuan@gmail.com</p>
-   <p> <i class="fa-brands fa-whatsapp"></i>+54 011 2983-402258</p>
-  </div>
-  <div class="socialNetworks">
-    <ul>
-      <li><i class="fa-brands fa-facebook-f"></i> Facebook</li>
-      <li><i class="fa-brands fa-google"></i> Google</li>
-      <li><i class="fa-brands fa-instagram"></i> Instagram</li>
-    </ul>
-  </div>
-</div>
-<header>
-  <div class="navigation">
-    <ul class="nav nav-tabs">
-      <li class="nav-item">
-        <a class="nav-link " aria-current="page" href="#">Inicio</a>
-      </li>
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button"
-          aria-expanded="false">Dropdown</a>
-        <ul class="dropdown-menu">
-          <li><a class="dropdown-item" href="#">Action</a></li>
-          <li><a class="dropdown-item" href="#">Another action</a></li>
-          <li><a class="dropdown-item" href="#">Something else here</a></li>
-          <li>
+
+
+  <header>
+    <div class="navigation">
+      <ul class="nav nav-tabs">
+        <li class="nav-item">
+          <a class="nav-link " aria-current="page"  [routerLink]="['/home']">Inicio</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled">Nosotros</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button"
+            aria-expanded="false">Servicios</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Electricidad</a></li>
             <hr class="dropdown-divider">
-          </li>
-          <li><a class="dropdown-item" href="#">Separated link</a></li>
-        </ul>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link " href="#">Link</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link disabled">Disabled</a>
-      </li>
-    </ul>
-  </div>
 
+            <li><a class="dropdown-item" href="#">Vigia</a></li>
+            <hr class="dropdown-divider">
 
-  <div class="wrapper">
-    <div class="buttons">
+            <li><a class="dropdown-item" href="#">Aire accondicionado</a></li>
+            <li>
+            </li>
+          </ul>
+        </li>
+        <li  *ngIf="isLoggedIn" class="nav-item">
+          <a class="nav-link "  [routerLink]="['/myaccount']">Mi cuenta</a>
+        </li>
 
-      <button>Sing in</button>
-      <button>Sing up</button>
+      </ul>
     </div>
 
-  </div>
-</header>
+
+    <div class="wrapper">
+      <div class="buttons">
+
+        <div  *ngIf="isLoggedIn; else loggedOutButtons">
+          <ul class="menu" >
+
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button"
+              aria-expanded="false">Menu</a>
+            <ul class="dropdown-menu">
+
+              <li><a class="dropdown-item"  [routerLink]="['/panelAdmin']" *ngIf="user.isAdmin()">Panel Admin</a></li>
+
+              <li><a class="dropdown-item" [routerLink]="['/configuration']">Configuracion</a></li>
+              <hr class="dropdown-divider">
+
+              <li><a class="dropdown-item" (click)="logout()">Salir</a></li>
+              <li>
+              </li>
+            </ul>
+          </li>
+
+
+        </ul>
+        </div>
+
+        <ng-template #loggedOutButtons>
+          <!-- Mostrar botones "Sign Up" y "Sign In" si no está iniciada la sesión -->
+          <button [routerLink]="['/login']">Ingresar</button>
+          <button [routerLink]="['/register']">Registrarse</button>
+        </ng-template>
+      </div>
+
+    </div>
+  </header>
 </div>

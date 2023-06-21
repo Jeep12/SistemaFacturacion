@@ -23,7 +23,23 @@ import { HomeComponent } from './components/home/home.component';
 import { VerifyEmailComponent } from './components/verify-email/verify-email.component';
 import { NavigationComponent } from './components/navigation/navigation.component';
 import { NoticesComponent } from './components/notices/notices.component';
-
+import { TicketsComponent } from './components/tickets/tickets.component';
+import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
+import { FirestoreUsersService } from './services/firestore-users.service';
+import { ConfigurationUserComponent } from './components/configuration-user/configuration-user.component';
+import { DetailsUserComponent } from './components/details-user/details-user.component';
+import { UpdateDateComponent } from './components/update-date/update-date.component';
+import { PanelAdminComponent } from './components/panel-admin/panel-admin.component';
+import { PanelNoticeComponent } from './components/panel-notice/panel-notice.component';
+import { PanelClientsComponent } from './components/panel-clients/panel-clients.component';
+import { PanelTicketsComponent } from './components/panel-tickets/panel-tickets.component';
+import { EditorModule } from '@tinymce/tinymce-angular';
+import { FirestoreNoticesService } from './services/firestore-notices.service';
+import { CarrouselHomeComponent } from './components/carrousel-home/carrousel-home.component';
+import { CardViesaComponent } from './components/cards/card-viesa/card-viesa.component';
+import { CardVigiaComponent } from './components/cards/card-vigia/card-vigia.component';
+import { CardVigiaGomasComponent } from './components/cards/card-vigia-gomas/card-vigia-gomas.component';
+import { CardAirComponent } from './components/cards/card-air/card-air.component';
 //environment.firebaseConfig
 @NgModule({
   declarations: [
@@ -34,14 +50,29 @@ import { NoticesComponent } from './components/notices/notices.component';
     HomeComponent,
     VerifyEmailComponent,
     NavigationComponent,
-    NoticesComponent
+    NoticesComponent,
+    TicketsComponent,
+    ConfigurationUserComponent,
+    DetailsUserComponent,
+    UpdateDateComponent,
+    PanelAdminComponent,
+    PanelNoticeComponent,
+    PanelClientsComponent,
+    PanelTicketsComponent,
+    CarrouselHomeComponent,
+    CardViesaComponent,
+    CardVigiaComponent,
+    CardVigiaGomasComponent,
+    CardAirComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
+    AngularFirestoreModule,
     BrowserAnimationsModule, //  toastr required animations module
     AppRoutingModule,
+    EditorModule,
     ToastrModule.forRoot(),
     AngularFireModule.initializeApp(environment.firebaseConfig),
     provideFirebaseApp(() => initializeApp(environment.firebaseConfig)),
@@ -51,6 +82,8 @@ import { NoticesComponent } from './components/notices/notices.component';
   providers: [
     LoadScriptsService,
     AuthService,
+    FirestoreUsersService,
+    FirestoreNoticesService,
     ErrorFirebaseService
   ],
   bootstrap: [AppComponent]

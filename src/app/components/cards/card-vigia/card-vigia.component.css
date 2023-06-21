@@ -1,0 +1,90 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  width: 250px;
+}
+.card .head {
+  text-align: center;
+  background-color: #344C66;
+  color:white
+}
+.card .footer {
+  width: 100%;
+  text-align: center;
+  padding: 15px;
+}
+.card .footer button {
+    background-color: #344C66;
+    color: white;
+    padding: 5px;
+    border: none;
+    margin-bottom: 5px;
+}
+.card .body {
+  height: 220px !;
+}
+.carousel {
+  width: 100%;
+  height: 180px;
+  position: relative;
+}
+
+.carousel > ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: 200ms opacity ease-in-out;
+  transition-delay: 200ms;
+}
+
+.slide > img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: center;
+}
+
+.slide[data-active] {
+  opacity: 1;
+  z-index: 1;
+  transition-delay: 0ms;
+}
+
+.btn {
+  position: absolute;
+  top: 50%;
+  z-index: 2;
+  border: none;
+  font-size: 15px;
+  transform: translateY(-50%);
+  padding: 0 0.5rem;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  color:white;
+  font-weight: bold;
+}
+
+.btn:hover,
+.btn:focus {
+  color: white;
+  background: rgba(0, 0, 0, .2);
+}
+
+.btn:focus {
+  outline: 1px solid black;
+}
+
+.btn.prev {
+  left: 1rem;
+}
+
+.btn.next {
+  right: 1rem;
+}

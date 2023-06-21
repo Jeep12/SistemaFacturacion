@@ -1,0 +1,17 @@
+.wrapper {
+  width: 500px;
+  margin: 40px auto;
+  background-color:#1A314A ;
+  color: white;
+  text-align: center;
+  padding: 20px;
+
+}
+.email {
+  padding: 10px;
+  background-color: #FFF3CD;
+  display: block;
+  border-radius: 5px;
+  color: black;
+
+}

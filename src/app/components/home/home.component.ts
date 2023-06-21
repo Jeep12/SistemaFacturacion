@@ -5,6 +5,8 @@ import { Factura } from 'src/app/Sistema/Factura';
 import { FacturaA } from 'src/app/Sistema/FacturaA';
 import { Usuario } from 'src/app/Sistema/Usuario';
 import { AuthService } from 'src/app/services/auth.service';
+import { FirestoreUsersService } from 'src/app/services/firestore-users.service';
+import { LoadScriptsService } from 'src/app/services/load-script.service';
 
 @Component({
   selector: 'app-home',
@@ -13,40 +15,29 @@ import { AuthService } from 'src/app/services/auth.service';
 })
 export class HomeComponent implements OnInit {
   currentUser: any;
-  authSubscription: Subscription | undefined;
-  user!:Usuario;
-  mostrar!:string;
-  facturasMock = [{
+  user!: Usuario;
+  mostrar!: string;
 
 
-  }];
-
-
-  constructor(private afAuth: AngularFireAuth, private auth: AuthService) { }
+  constructor(
+    private afAuth: AngularFireAuth,
+    private auth: AuthService,
+    private fsUser: FirestoreUsersService,
+    private loadScript: LoadScriptsService) {
+      this.loadScript.load(['carrousel']);
+  }
 
   ngOnInit(): void {
-    this.authSubscription = this.afAuth.authState.subscribe((user) => {
-      this.currentUser = user;
-      if (user) {
-        const email: string = user.email || '';
-        const name:string = user.displayName ||'Nombre no encontrado';
-        const uid:string = user.uid;
-        this.user = new Usuario(email,name,uid);
 
-        this.mostrar = this.user.toString();
-      }
-    });
+
   }
   ngOnDestroy(): void {
-    if (this.authSubscription) {
-      this.authSubscription.unsubscribe();
-    }
+
   }
   logout() {
-    this.auth.logout();
   }
 
   pruebaClases() {
-    console.log (this.user.getFacturas());
+    console.log(this.user.getFacturas());
   }
 }

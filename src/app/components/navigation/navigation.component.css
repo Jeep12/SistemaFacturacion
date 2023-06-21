@@ -1,129 +1,240 @@
-@media only screen and (max-width: 800px) {
-  .wrapper-nav {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    width: 100%;
-  }
+.wrapper-nav {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  width: 100%;
+}
 
-  .social {
-    width: 100%;
-    color: white;
-    background-color: red;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    padding: 10px;
+.social {
+  width: 100%;
+  display: flex;
+  background-color: #1a314a;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 10px;
 
 
-  }
+}
 
-  .logo {
-    width: 25%;
-  }
+.logo {
+  width: 25%;
+}
 
-  .contact {
-    width: 50%;
-    text-align: center;
-  }
+.contact {
+  width: 50%;
+  text-align: center;
+}
 
-  .contact p {
-    text-decoration: 1.5px underline;
-  }
+.contact p {
+  text-decoration: 1.5px underline;
+}
 
-  .socialNetworks {
-    width: 25%;
-  }
+.socialNetworks {
+  width: 25%;
+}
 
-  .socialNetworks ul li {
-    list-style: none;
-    text-align: center;
-    padding: 2px;
+.socialNetworks ul li {
+  list-style: none;
+  text-align: center;
+  padding: 2px;
 
-  }
+}
 
-  .socialNetworks ul li:hover {
-    background-color: #29ABE2;
-    box-shadow: 0px 3px 6px -1px rgba(0, 0, 0, 0.75);
-    transition-duration: 1s;
-    cursor: pointer;
 
-  }
 
+header {
+  display: flex;
+  flex-direction: row;
+  min-height: 50px;
+  background-color: #344C66;
+  padding: 10px;
+  margin: 0;
+}
+
+.navigation {
+  width: 70%;
+  padding: 10px;
+  align-items: center;
+}
+
+.navigation a {
+  color: white;
+}
+
+.nav {
+  border: none;
+}
+
+.nav li :hover {
+  border: none;
+  border-radius: 0px;
+  background-color: 344C66;
+  box-shadow: 0px 3px 6px -1px rgba(0, 0, 0, 0.75);
+  transition-duration: 1s;
+}
+
+.nav li {
+  border: none;
+  border-radius: 0px;
+}
+
+.dropdown-menu {
+  background-color: #344C66 !important;
+}
+
+.dropdown-menu li :hover {
+  background-color: #344C66;
+}
+
+.wrapper {
+  width: 30%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.wrapper .buttons {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+
+}
+
+.wrapper .buttons button {
+  margin-left: 5px;
+  padding: 10px;
+  width: 80px;
+  border: none;
+  background-color: #1e344d;
+  color: white;
+
+}
+
+
+
+
+@media only screen and (max-width: 600px) {
   header {
-    border-top: 1px solid black;
-    display: flex;
-    flex-direction: row;
-    min-height: 50px;
-    background-color: #344C66;
-    padding: 10px;
-    margin: 0;
+    height: 100px;
   }
 
   .navigation {
-    width: 70%;
-    padding: 10px;
-    align-items: center;
-  }
-
-  .navigation a {
-    color: white;
-  }
-
-  .nav {
-    border: none;
-  }
-
-  .nav li :hover {
-    border: none;
-    border-radius: 0px;
-    background-color: #29ABE2;
-    box-shadow: 0px 3px 6px -1px rgba(0, 0, 0, 0.75);
-    transition-duration: 1s;
-  }
-
-  .nav li {
-    border: none;
-    border-radius: 0px;
-  }
-
-  .dropdown-menu {
-    background-color: #344C66 !important;
-  }
-
-  .dropdown-menu li :hover {
-    background-color: #344C66;
+    width: 60%;
   }
 
   .wrapper {
-    width: 30%;
+    width: 40%;
     display: flex;
     flex-direction: row;
     align-items: center;
+    justify-content: center;
   }
 
-  .wrapper .buttons {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-
-  }
+  .wrapper .buttons {}
 
   .wrapper .buttons button {
     margin-left: 5px;
-    padding: 10px;
-    width: 80px;
+    padding: 12px;
+    width: 93px;
+    text-align: center;
     border: none;
     background-color: #1e344d;
     color: white;
 
   }
 
-  .wrapper .buttons button:hover {
-    background-color: #29ABE2;
-    box-shadow: 0px 3px 6px -1px rgba(0, 0, 0, 0.75);
-    transition-duration: 1s;
+}
+
+@media only screen and (min-width: 1366px) {
+  header {
+    height: 50px;
+    align-items: center;
+    font-size: 15px;
+    background-color: #344C66;
+
 
   }
 
+  .social {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    background-color: white;
+
+
+  }
+
+
+
+  .logo {
+    width: 30%;
+  }
+
+  .logo img {
+     width: 140px;
+     margin: auto;
+     display: block;
+   }
+  .socialNetworks {
+    width: 30%;
+  }
+
+
+
+  .contact {
+    width: 40%;
+    text-align: center;
+  }
+  .contact ul li {
+    list-style: none;
+    color: #362E3D;
+    margin-top: 3px;
+  }
+  .contact ul li i {
+    font-size: 17px;
+  }
+
+  .socialNetworks {
+    width: 30%;
+  }
+
+  .socialNetworks ul li {
+    list-style: none;
+    text-align: center;
+    padding: 2.5px;
+    margin-left: 5px;
+    color: #362E3D;
+
+  }
+
+  .wrapper .buttons button {
+    margin-left: 15px;
+    padding: 6px;
+    width: 90px;
+    border: none;
+    background-color: #1e344d;
+    color: white;
+
+
+  }
+
+  .menu {
+    margin-top: 15px;
+    list-style: none;
+    color: white;
+    text-align: center;
+    padding: 5px;
+    cursor: pointer;
+  }
+
+  .menu li a {
+    color: white !important;
+
+
+
+
+  }
 }

@@ -1,0 +1,230 @@
+<div class="wrapperHome">
+  <div class="wrapperNotice">
+    <div class="head">
+      <h5>Ultimas noticias</h5>
+    </div>
+    <div class="notices">
+      <app-notices></app-notices>
+
+    </div>
+  </div>
+
+
+  <div class="oferts">
+    <section aria-label="Newest Photos">
+
+      <div class="carousel" data-carousel>
+
+        <button class="btn prev" data-carousel-btn="prev"><i class="fa-solid fa-arrow-left"></i></button>
+        <button class="btn next" data-carousel-btn="next"><i class="fa-solid fa-arrow-right"></i></button>
+
+        <ul data-slides>
+          <li class="slide" data-active>
+            <img src="../../../assets/images/alternador.avif">
+          </li>
+
+          <li class="slide">
+            <img src="../../../assets/images/burro.jpg">
+          </li>
+
+          <li class="slide">
+            <img src="../../../assets/images/luces.avif">
+          </li>
+
+          <li class="slide">
+            <img src="../../../assets/images/vigia.jpg">
+          </li>
+
+          <li class="slide">
+            <img src="../../../assets/images/aire.jpg">
+          </li>
+        </ul>
+
+      </div>
+
+    </section>
+    <div class="ubication">
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/dWZVfbuba_E" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    </div>
+
+  </div>
+
+
+</div>
+<div class="carts row" style="width:80%;margin: auto;">
+  <div class="col-sm-4">
+    <div class="card" style="width: 18rem;">
+      <img src="../../../assets/images/aire.jpg" class="card-img-top" alt="...">
+      <div class="card-body">
+        <p class="card-text">Puedes ver nuestros trabajos con aire accoindicionado aqui</p>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-4">
+    <div class="card" style="width: 18rem;">
+      <img src="../../../assets/images/luces.avif" class="card-img-top" alt="...">
+      <div class="card-body">
+        <p class="card-text">Puedes ver nuestros trabajos con aire accoindicionado aqui</p>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-4">
+    <div class="card" style="width: 18rem;">
+      <img src="../../../assets/images/burro.jpg" class="card-img-top" alt="...">
+      <div class="card-body">
+        <p class="card-text">Puedes ver nuestros trabajos con aire accoindicionado aqui</p>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-4">
+    <div class="card" style="width: 18rem;">
+      <img src="../../../assets/images/alternador.avif" class="card-img-top" alt="...">
+      <div class="card-body">
+        <p class="card-text">Puedes ver nuestros trabajos con aire accoindicionado aqui</p>
+      </div>
+    </div>
+  </div>
+</div>
+.wrapperHome {
+  display: flex;
+  flex-direction: row-reverse;
+  flex-wrap: wrap;
+  width: 90%;
+  margin: 20px auto;
+}
+
+.wrapperNotice {
+  width: 40%;
+  height: 500px;
+  padding: 10px;
+
+
+
+}
+
+.head {
+  width: 100%;
+  text-align: center;
+  background-color:#1A314A ;
+  height: 30px;
+
+}
+
+.head h5 {
+  font-size: 15px;
+  font-weight: bold;
+  color: white;
+
+}
+
+.notices {
+  height: 400px;
+  overflow-y: scroll;
+}
+.notices::-webkit-scrollbar {
+  /* Estilos para navegadores basados en WebKit, como Chrome y Safari */
+  background-color: #f2f2f2; /* Color de fondo de la barra de desplazamiento */
+
+}
+
+.notices::-webkit-scrollbar-thumb {
+  /* Estilos para el pulgar de la barra de desplazamiento en navegadores basados en WebKit */
+  background-color: #1A314Aed;
+
+}
+
+.notices::-webkit-scrollbar-track {
+  /* Estilos para el fondo de la barra de desplazamiento en navegadores basados en WebKit */
+  background-color: #344C66;
+}
+
+.oferts {
+  width: 60%;
+  padding: 10px;
+}
+
+
+
+
+
+.ubication{
+  display: flex;
+  flex-direction: row;
+  padding: 10px;
+  margin-top: 10px;
+}
+.wrapperFrame  {
+  background-color: white;
+  width: 60%;
+}.container{
+  width: 40%;
+  background-color: white;
+}
+.container h1 {
+  font-size: 15px;
+}
+
+.carousel {
+  width: 100%;
+  height: 300px;
+  position: relative;
+}
+
+.carousel > ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: 200ms opacity ease-in-out;
+  transition-delay: 200ms;
+}
+
+.slide > img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: center;
+}
+
+.slide[data-active] {
+  opacity: 1;
+  z-index: 1;
+  transition-delay: 0ms;
+}
+
+.btn {
+  position: absolute;
+  top: 50%;
+  z-index: 2;
+  border: none;
+  font-size: 4rem;
+  transform: translateY(-50%);
+  padding: 0 0.5rem;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  color: rgba(255, 255, 255, .5);
+}
+
+.btn:hover,
+.btn:focus {
+  color: white;
+  background: rgba(0, 0, 0, .2);
+}
+
+.btn:focus {
+  outline: 1px solid black;
+}
+
+.btn.prev {
+  left: 1rem;
+}
+
+.btn.next {
+  right: 1rem;
+}

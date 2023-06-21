@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AngularFireAuth } from '@angular/fire/compat/auth';
 
 @Component({
   selector: 'app-verify-email',
@@ -6,10 +7,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./verify-email.component.css']
 })
 export class VerifyEmailComponent implements OnInit {
-
-  constructor() { }
+  email:string | any ;
+  constructor(private afAuth:AngularFireAuth) { }
 
   ngOnInit(): void {
+    this.afAuth.authState.subscribe(user=>{
+      console.log(user)
+      this.email=  user?.email;
+
+    })
   }
 
 }

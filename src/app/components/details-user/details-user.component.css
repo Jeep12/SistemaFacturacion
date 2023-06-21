@@ -1,0 +1,25 @@
+.wrapper h5 {
+  width: 100%;
+  text-align: left;
+  padding: 5px;
+}
+
+.wrapper ul {
+  width: 300px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+table {
+  width: 400px;
+  text-align: left;
+}
+
+table tr {
+  padding: 5px;
+}
+
+table tr td {
+  padding: 5px;
+}

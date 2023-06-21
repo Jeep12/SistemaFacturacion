@@ -1,0 +1,49 @@
+<div class="wrapper" *ngIf="uploadUser === true;else loader">
+
+  <h5>Perfil</h5>
+
+  <div style="height: 60px;" *ngIf="!user.isComplete()" class="alert alert-warning" role="alert">
+    <p>Tienes datos que faltan completar!</p>
+  </div>
+  <table>
+    <tr>
+      <td>Email</td>
+      <td>{{user.getEmail()}}</td>
+
+    </tr>
+    <tr>
+      <td>Nombre </td>
+      <td>
+        <i *ngIf="!user.isComplete();else detail" class="fa-solid fa-triangle-exclamation" style="color: #664D03;"></i>
+        <ng-template #detail>
+          {{user.getDisplayName()}}
+        </ng-template>
+      </td>
+    </tr>
+    <tr>
+      <td>Num Telefono</td>
+      <td> <i *ngIf="!user.isComplete();else detailPhone" class="fa-solid fa-triangle-exclamation"
+          style="color: #664D03;"></i>
+
+        <ng-template #detailPhone>
+          {{user.getPhoneNumber()}}
+        </ng-template>
+      </td>
+
+    </tr>
+    <tr>
+      <td>Dirección</td>
+      <td> <i *ngIf="!user.isComplete();else detailDirection" class="fa-solid fa-triangle-exclamation"
+          style="color: #664D03;"></i>
+        <ng-template #detailDirection>
+          {{user.getDirection()}}
+        </ng-template>
+      </td>
+
+    </tr>
+  </table>
+
+</div>
+<ng-template #loader>
+  Cargando datos...
+</ng-template>

@@ -1,0 +1,19 @@
+<div class="wrapper">
+  <div><h4>Complete sus datos aquí</h4></div>
+  <form (ngSubmit)="updateDates()" [formGroup]="dates">
+    <label for=""> <i class="fa-solid fa-user-pen"></i> Ingrese su nombre</label>
+    <input type="text" formControlName="displayName">
+
+    <label for=""> <i class="fa-solid fa-phone"></i> Ingrese su numero de telefono</label>
+    <input type="number" formControlName="phoneNumber">
+
+    <label for=""><i class="fa-solid fa-street-view"></i>  Ingrese su direccion </label>
+    <input type="text" formControlName="direction" >
+
+    <label for=""> <i class="fa-solid fa-calendar-days"></i>  Ingrese su fecha de nacimiento</label>
+    <input style="text-align: center;" type="date"  formControlName="birthDate">
+    <br>
+    <br>
+    <input type="submit" value="Guardar cambios">
+  </form>
+</div>

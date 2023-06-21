@@ -1,0 +1,55 @@
+.banner {
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+
+}
+.wrapper-services{
+  width: 70%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+.wrapper-services h3 {
+  width: 100%;
+  background-color: #344C66;
+  text-align: center;
+  color: white;
+}
+.card {
+  margin-left: 20px;
+}
+
+.wrapper-notices {
+  width: 30%;
+  height: 600px;
+  overflow-y: scroll;
+
+}
+.wrapper-notices h3 {
+  width: 100%;
+  background-color: #344C66;
+  text-align: center;
+  color: white;
+}
+.wrapper-notices::-webkit-scrollbar {
+  /* Estilos para navegadores basados en WebKit, como Chrome y Safari */
+  background-color: #f2f2f2; /* Color de fondo de la barra de desplazamiento */
+
+}
+
+.wrapper-notices::-webkit-scrollbar-thumb {
+  /* Estilos para el pulgar de la barra de desplazamiento en navegadores basados en WebKit */
+  background-color: #1A314Aed;
+
+}
+
+.wrapper-notices::-webkit-scrollbar-track {
+  /* Estilos para el fondo de la barra de desplazamiento en navegadores basados en WebKit */
+  background-color: #344C66;
+}

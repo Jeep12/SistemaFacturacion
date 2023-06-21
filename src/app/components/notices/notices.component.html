@@ -1,1 +1,8 @@
-<p>notices works!</p>
+<div>
+  <div *ngFor="let noticia of notices">
+    <h5>{{ noticia.titulo }} <span class="fecha"> Fecha:{{ noticia.date }} </span></h5>
+    <div [innerHTML]="noticia.descripcion"></div>
+    <p class="author">Publiclado por Dur Cor</p>
+    <hr>
+  </div>
+</div>

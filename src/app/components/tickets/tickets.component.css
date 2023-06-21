@@ -1,0 +1,21 @@
+.wrapper {
+  display: flex;
+  flex-direction: row;
+  height: 100vh;
+}
+
+.submenu {
+  width: 20%;
+  background-color: #1A314A;
+
+}
+
+.detail {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+}
+.detail .orden {
+  width: 100%;
+  background-color:#1A314A ;
+}

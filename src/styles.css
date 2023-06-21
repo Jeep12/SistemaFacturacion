@@ -1,13 +1,18 @@
 /* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Dongle:wght@300&family=Montserrat:ital,wght@1,100&family=PT+Sans:ital@1&display=swap');
+
+
 * {
   padding: 0;
   margin: 0;
 }
 
+/*
 body {
   background: rgb(201, 197, 199);
   background: radial-gradient(circle, rgba(201, 197, 199, 1) 0%, rgba(251, 253, 255, 1) 100%);
 }
+*/
 
 .wrapperLogin-Register {
   height: 100vh;
@@ -43,32 +48,7 @@ body {
     display: none;
   }
 
-  .wrapperLogin-Register {
-    width: 100vh;
-    height: 100vh;
 
-  }
-  .wrapperLogin-Register .wrapper-form {
-    width: 100%;
-    height: 700px;
-  }
-  .password-container {
-    width: 100%;
-    background-color: yellow;
-    padding: 10px;
-  }
-  .wrapperLogin-Register .wrapper-form .label {
-    width: 100%;
-    background-color: goldenrod !important;
-  }
-  .password-container input {
-    width: 100%;
-    background-color: red;
-    padding: 10px;
-  }
-  .password-container i {
-    background-color: green;
-  }
 }
 
 @media only screen and (max-width: 1370px) {

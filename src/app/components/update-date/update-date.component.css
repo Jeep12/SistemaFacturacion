@@ -1,0 +1,16 @@
+.wrapper form {
+  width: 300px;
+  display: block;
+  margin: 25px auto;
+}
+
+.wrapper form input {
+  width: 100%;
+
+}
+.wrapper form input[type="submit"]{
+  background-color: #29ABE2;
+  border: none;
+  color: white;
+  height: 30px;
+}

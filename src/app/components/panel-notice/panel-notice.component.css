@@ -1,0 +1,67 @@
+.wrapper-panel{
+  display: flex;
+  flex-direction: column;
+}
+.wrapper-panel .formNotice {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 20px;
+
+  width: 100%;
+}
+.formNotice form {
+  width: 100%;
+}
+.formNotice form .tittle {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  flex-wrap: wrap;
+}
+.formNotice form .tittle input {
+  width: 80%;
+}
+.formNotice form .tittle .date {
+  width: 20%;
+  background-color: white;
+  border-radius: 5px;
+  text-align: center;
+
+}
+.formNotice .tittle label {
+  width: 100%;
+}
+
+
+
+
+.editor {
+  margin: auto;
+  display: block;
+  width: 100%;
+  box-shadow: 1px 2px 27px -1px rgba(0,0,0,0.75);
+
+}
+.wrapper-panel .formNotice  button{
+    width: 200px;
+    height: 60px;
+    color: white;
+    pad: 5px;
+    background-color: #344C66;
+    display: block;
+    margin:20px auto;
+    border: none;
+}
+
+.wrapper-panel form input {
+  width: 100%;
+}
+.wrapper-panel .container {
+  width: 80%;
+}
+.wrapperNotices {
+  height: 300px;
+  background-color: white;
+  overflow-y: scroll;
+}
