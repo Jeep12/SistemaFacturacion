@@ -1,0 +1,28 @@
+.wrapper {
+  display: flex;
+  width: 100%;
+  margin-top: 25px;
+}
+
+.wrapper-services-cart {
+width: 50%;
+
+}
+.wrapper-services-cart select{
+  width: 160px;
+  height: 40px;
+  background-color: aliceblue;
+  text-align: center;
+}
+.wrapper-banner {
+  width: 50%;
+
+}
+.wrapper-services-cart h5 {
+  width: 100%;
+  padding: 5px;
+  color: white;
+  text-align: center;
+  background-color: #344C66;
+
+}

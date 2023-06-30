@@ -13,6 +13,27 @@ body {
   background: radial-gradient(circle, rgba(201, 197, 199, 1) 0%, rgba(251, 253, 255, 1) 100%);
 }
 */
+body::-webkit-scrollbar {
+  /* Estilos para navegadores basados en WebKit, como Chrome y Safari */
+  background-color: #f2f2f2;
+  /* Color de fondo de la barra de desplazamiento */
+
+}
+
+body::-webkit-scrollbar-thumb {
+  /* Estilos para el pulgar de la barra de desplazamiento en navegadores basados en WebKit */
+  background-color: #1A314Aed;
+
+
+}
+
+body::-webkit-scrollbar-track {
+  /* Estilos para el fondo de la barra de desplazamiento en navegadores basados en WebKit */
+  background-color: #344C66;
+  padding: 2px;
+
+}
+
 
 .wrapperLogin-Register {
   height: 100vh;
@@ -71,6 +92,7 @@ body {
     height: 550px;
 
   }
+
   .wrapperLogin-Register .wrapper-form {
     background-color: #344C66;
     text-align: center;

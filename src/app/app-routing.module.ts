@@ -16,6 +16,7 @@ import { VerifiedGuard } from './utils/VerifiedGuard';
 import { PanelNoticeComponent } from './components/panel-notice/panel-notice.component';
 import { PanelClientsComponent } from './components/panel-clients/panel-clients.component';
 import { PanelTicketsComponent } from './components/panel-tickets/panel-tickets.component';
+import { UploadArchComponent } from './components/upload-arch/upload-arch.component';
 
 
 const routes: Routes = [
@@ -59,6 +60,10 @@ const routes: Routes = [
       },{
         path:'panelTickets',
         component:PanelTicketsComponent
+      }
+      ,{
+        path:'uploadArch',
+        component:UploadArchComponent
       }
     ]
   },

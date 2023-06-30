@@ -40,6 +40,9 @@ import { CardViesaComponent } from './components/cards/card-viesa/card-viesa.com
 import { CardVigiaComponent } from './components/cards/card-vigia/card-vigia.component';
 import { CardVigiaGomasComponent } from './components/cards/card-vigia-gomas/card-vigia-gomas.component';
 import { CardAirComponent } from './components/cards/card-air/card-air.component';
+import { UploadArchComponent } from './components/upload-arch/upload-arch.component';
+import { AngularFireStorageModule } from '@angular/fire/compat/storage';
+
 //environment.firebaseConfig
 @NgModule({
   declarations: [
@@ -63,29 +66,37 @@ import { CardAirComponent } from './components/cards/card-air/card-air.component
     CardViesaComponent,
     CardVigiaComponent,
     CardVigiaGomasComponent,
-    CardAirComponent
+    CardAirComponent,
+    UploadArchComponent
   ],
   imports: [
+    AppRoutingModule,
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
-    AngularFirestoreModule,
     BrowserAnimationsModule, //  toastr required animations module
-    AppRoutingModule,
-    EditorModule,
     ToastrModule.forRoot(),
+    EditorModule,
+    AngularFirestoreModule,
+    AngularFireStorageModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     provideFirebaseApp(() => initializeApp(environment.firebaseConfig)),
     provideFirestore(() => getFirestore()),
 
+
+
   ],
   providers: [
-    LoadScriptsService,
     AuthService,
     FirestoreUsersService,
     FirestoreNoticesService,
-    ErrorFirebaseService
+    ErrorFirebaseService,
+    LoadScriptsService
   ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+function provideStorage(arg0: () => any): any[] | import("@angular/core").Type<any> | import("@angular/core").ModuleWithProviders<{}> {
+  throw new Error('Function not implemented.');
+}
+
