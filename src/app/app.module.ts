@@ -42,10 +42,12 @@ import { CardVigiaGomasComponent } from './components/cards/card-vigia-gomas/car
 import { CardAirComponent } from './components/cards/card-air/card-air.component';
 import { UploadArchComponent } from './components/upload-arch/upload-arch.component';
 import { AngularFireStorageModule } from '@angular/fire/compat/storage';
+import { CommonModule } from '@angular/common';
 
 //environment.firebaseConfig
 @NgModule({
   declarations: [
+    
     AppComponent,
     LoginComponent,
     WelcomeComponent,
@@ -70,6 +72,7 @@ import { AngularFireStorageModule } from '@angular/fire/compat/storage';
     UploadArchComponent
   ],
   imports: [
+    CommonModule,
     AppRoutingModule,
     BrowserModule,
     FormsModule,

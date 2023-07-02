@@ -13,8 +13,9 @@ export class FirestoreNoticesService {
   constructor(private firestore: AngularFirestore, private toastr: ToastrService
   ) {
     this.noticesCollection = this.firestore.collection('noticias', (ref) => {
+      
       // Ordenar las noticias por la fecha de agregado en orden descendente
-      return ref.orderBy('date', 'asc');
+      return ref.orderBy('date', 'desc');
     });
 
     this.notices = this.noticesCollection.valueChanges();
