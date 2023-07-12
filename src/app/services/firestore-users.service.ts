@@ -49,7 +49,6 @@ export class FirestoreUsersService {
     }
     const docSnapshot = querySnapshot.docs[0];
     const usuarioData = docSnapshot.data();
-
     // Aquí se crea la instancia de la clase Usuario y se le pasan los datos del documento
     const usuario = new Usuario(
       usuarioData.uid,

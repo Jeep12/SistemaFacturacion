@@ -65,7 +65,9 @@ export class UploadArchComponent implements OnInit {
 
 
 
+  upload(){
 
+  }
 
 
   datos(index: number) {

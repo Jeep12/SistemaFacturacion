@@ -25,7 +25,7 @@ export class PanelClientsComponent implements OnInit {
   showDropdownIndex: number = -1;
 
 
-  orderBy: string = 'nombre'; // Valor predeterminado para el ordenamiento
+  orderBy: string = 'admin'; // Valor predeterminado para el ordenamiento
 
 
   searchSelect: string = "nombre";

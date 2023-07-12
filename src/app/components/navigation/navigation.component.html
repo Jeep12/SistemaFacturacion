@@ -83,7 +83,7 @@
               <div class="user-dropdown-menu">
                 <a class="dropdown-item"  [routerLink]="['/panelAdmin']" *ngIf="user.isAdmin()">Panel Admin</a>
                 <hr  *ngIf="user.isAdmin()">
-                <a [routerLink]="['/configuration']" class="dropdown-item">Configuración</a>
+                <a [routerLink]="['/configuration']" class="dropdown-item">Mi Cuenta</a>
                 <hr>
 
                 <a  type="button" class="dropdown-item" (click)="logout()">Salir</a>

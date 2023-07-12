@@ -4,25 +4,48 @@
   margin-top: 25px;
 }
 
+.wrapper-banner {
+  width: 50%;
+}
+
 .wrapper-services-cart {
-width: 50%;
+  width: 50%;
 
 }
-.wrapper-services-cart select{
+
+.wrapper-services-cart select {
   width: 160px;
   height: 40px;
   background-color: aliceblue;
   text-align: center;
 }
+
 .wrapper-banner {
   width: 50%;
 
 }
+
 .wrapper-services-cart h5 {
   width: 100%;
   padding: 5px;
   color: white;
   text-align: center;
   background-color: #344C66;
+  margin-top: 5px;
 
+}
+.img {
+  background-color: #344C66;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-grow: 1fr;
+  padding: 10px;
+}
+.wrapper-image {
+  background-color: white;
+  margin-left: 10px;
+}
+.img img {
+  border-top: 2px solid #344C66 ;
 }

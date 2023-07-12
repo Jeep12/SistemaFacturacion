@@ -21,6 +21,15 @@
       </td>
     </tr>
     <tr>
+      <td>Fecha de nacimiento </td>
+      <td>
+        <i *ngIf="!user.isComplete();else detailBirdate" class="fa-solid fa-triangle-exclamation" style="color: #664D03;"></i>
+        <ng-template #detailBirdate>
+          {{user.getBirthdate()}}
+        </ng-template>
+      </td>
+    </tr>
+    <tr>
       <td>Num Telefono</td>
       <td> <i *ngIf="!user.isComplete();else detailPhone" class="fa-solid fa-triangle-exclamation"
           style="color: #664D03;"></i>

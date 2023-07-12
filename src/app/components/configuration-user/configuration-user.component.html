@@ -1,13 +1,13 @@
 
 <div class="wrapper_configuration" >
-  <h1>Configuracion de usuario </h1><br>
+  <h1>Mi Cuenta </h1><br>
   <hr>
   <div class="menuUser" *ngIf="uploadUser;else loader">
       <ul>
         <li type="button" [routerLink]="['/configuration/details']">Mis datos</li>
         <li  type="button" [routerLink]="['/configuration/update']" *ngIf="!user.isComplete()">Completar mis datos</li>
         <li>Cambiar contraseña</li>
-        <li style="border-bottom: 1px solid white;">Mis mensajes</li>
+        <li style="border-bottom: 1px solid white;">Mis Facturas</li>
       </ul>
   </div>
   <div class="container-configuration">
