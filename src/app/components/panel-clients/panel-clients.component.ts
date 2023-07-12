@@ -25,7 +25,7 @@ export class PanelClientsComponent implements OnInit {
   showDropdownIndex: number = -1;
 
 
-  orderBy: string = 'admin'; // Valor predeterminado para el ordenamiento
+  orderBy: string = ''; // Valor predeterminado para el ordenamiento
 
 
   searchSelect: string = "nombre";
@@ -54,8 +54,10 @@ export class PanelClientsComponent implements OnInit {
         );
         this.originalUsers.push(user);
         this.users.push(user);
+        this.orderBy= "nombre";
       }
     });
+
   }
 
 
@@ -129,8 +131,7 @@ export class PanelClientsComponent implements OnInit {
 
 
   ordenar() {
-    this.orderBy;
-    console.log(this.orderBy);
+
     switch (this.orderBy) {
       case 'nombre':
         this.users.sort((a, b) => a.getDisplayName().toLowerCase().localeCompare(b.getDisplayName().toLowerCase())).reverse();

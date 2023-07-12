@@ -79,14 +79,14 @@
           <div class="menu_user" *ngIf="isLoggedIn; else loggedOutButtons">
             <div class="user-dropdown">
               <input type="checkbox" id="user-dropdown-toggle" class="user-dropdown-toggle">
-              <label for="user-dropdown-toggle" class="user-dropdown-label">Menu</label>
+              <label for="user-dropdown-toggle" class="user-dropdown-label"><i class="fa-solid fa-bars"></i></label>
               <div class="user-dropdown-menu">
-                <a class="dropdown-item"  [routerLink]="['/panelAdmin']" *ngIf="user.isAdmin()">Panel Admin</a>
+                <a class="dropdown-item"  [routerLink]="['/panelAdmin']" *ngIf="user.isAdmin()"><i class="fa-solid fa-screwdriver-wrench"></i> Panel Admin</a>
                 <hr  *ngIf="user.isAdmin()">
-                <a [routerLink]="['/configuration']" class="dropdown-item">Mi Cuenta</a>
+                <a [routerLink]="['/configuration']" class="dropdown-item"><i class="fa-solid fa-user-gear"></i> Mi Cuenta</a>
                 <hr>
 
-                <a  type="button" class="dropdown-item" (click)="logout()">Salir</a>
+                <a  type="button" class="dropdown-item" (click)="logout()"><i class="fa-solid fa-right-from-bracket"></i> Salir</a>
               </div>
             </div>
           </div>

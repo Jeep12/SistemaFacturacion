@@ -1,8 +1,7 @@
 <div class="wrapper">
-  <div class="wrapper-banner">
-
-  </div>
+  <div class="wrapper-banner"></div>
   <div class="wrapper-services-cart">
+    <h1>Servicios</h1>
     <h5>Tarjeta {{cardSelect}}</h5>
 
     <select [(ngModel)]="cardSelect" (change)="opcionSeleccionada()">
@@ -10,123 +9,67 @@
       <option value="VigiaMotor">Vigia Motor</option>
       <option value="VigiaGomas">Vigia Gomas</option>
       <option value="Electricidad">Electricidad</option>
-
     </select> &nbsp;<i class="fa-regular fa-hand-pointer fa-rotate-270"></i> Seleccione una tarjeta
-    <div class="images">
 
+    <div class="images">
       <h5>Imagenes</h5>
 
       <div class="img" *ngIf="images.length !==0;else loader">
-
-        <span class="wrapper-image" *ngFor="let image of images;index as i" >
+        <span class="wrapper-image" *ngFor="let image of images; index as i">
           <span>
+            <!-- Modal -->
+            <div class="modal" id="myModal" [id]="'staticBackdrop' + i" data-bs-backdrop="static" data-bs-keyboard="false"
+            tabindex="-1" *ngIf="showModal[i]"   aria-labelledby="staticBackdropLabel" [ngClass]="{ 'show': showModal, 'hide': !showModal }">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="staticBackdropLabel">¿Esta seguro?</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                    <div class="alert alert-warning" role="alert">
+                      <h4  style="font-size: 15px;"><i class="fa-solid fa-triangle-exclamation"></i> Usted esta por borrar la siguiente imagen</h4>
+                    </div>
+                    <img [src]="image" class="imageModal" width="100" height="100" alt="">
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" (click)="closeModal(i)">Cerrar</button>
+                    <button type="button" class="btn-delete" (click)="imgSelect(image,i)">Borrar</button>
+                  </div>
+                </div>
+              </div>
+            </div>
 
-            <span style="float:left">{{i+1}}</span><span style="float:right"> <i class="fa-solid fa-x" ></i></span>
+            <span style="float:left">{{i+1}}</span>
+            <button class="deleteImage" style="float:right" type="button" data-bs-toggle="modal"
+            [attr.data-bs-target]="'#staticBackdrop' + i" (click)="openModal(i)">
+            <i class="fa-solid fa-x"></i>
+          </button>
+
+
           </span>
           <br>
-          <img (click)="datos(i)"[src]="image" width="100" height="100" alt="">
+          <img [src]="image" width="100" height="100" alt="">
         </span>
       </div>
+
       <ng-template #loader>
-        <div class="spinner-border" role="status">
+        <div style="margin: auto;display:block;" class="spinner-border" role="status">
           <span class="sr-only">Loading...</span>
         </div>
       </ng-template>
-
-
-
-
     </div>
+
     <div class="upload">
-          <!-- Select File -->
-          <h5>Cargar imagen</h5>
-          <input type="file" (change)="uploadImage($event)" />
-          <hr>
-          <!-- Image Preview -->
-          <div class="imagePreview" *ngIf="imageURL && imageURL !== ''">
-            <img width="200" height="160" [src]="imageURL">
-          </div>
-          <button (click)="upload()">Cargar</button>
+      <!-- Select File -->
+      <h5>Cargar imagen</h5>
+      <input type="file" (change)="uploadImage($event)" />
+
+      <!-- Image Preview -->
+      <div class="imagePreview" *ngIf="imageURL && imageURL !== ''">
+        <img width="200" height="160" [src]="imageURL">
+      </div>
+      <button class="btn-upload" (click)="upload()">Cargar</button>
     </div>
   </div>
 </div>
-
-
-
-<!--
-<div class="wrapper">
-  <div class="wrapper-services-cart">
-    <h5>Tarjeta {{cardSelect}}</h5>
-
-    <select [(ngModel)]="cardSelect" (change)="opcionSeleccionada()">
-      <option value="viesa">Viesa</option>
-      <option value="VigiaMotor">Vigia Motor</option>
-      <option value="VigiaGomas">Vigia Gomas</option>
-      <option value="Electricidad">Electricidad</option>
-
-    </select>
-  </div>
-  <div class="wrapper-services-banner">
-
-
-
-  </div>
-
-
-
-</div>
-
-
-
-
-
-
-     <input type="file" (change)="uploadImage($event)">
-
-iv class="wrapper">
-
-
-
-    <div class="prueba">
-      <h5>Cartas</h5>
-      <label for="">Elija la carta</label>
-      <select [(ngModel)]="cardSelect" (change)="opcionSeleccionada()">
-        <option value="viesa">Viesa</option>
-        <option value="VigiaMotor">Vigia Motor</option>
-        <option value="VigiaGomas">Vigia Gomas</option>
-        <option value="Electricidad">Electricidad</option>
-
-      </select>
-      <div class="upload">
-
-
-        <form>
-          <label for="">Carge su imagen</label>
-          <input type="file" name="" id="">
-          <input type="submit" value="Guardar">
-
-        </form>
-
-
-         <input type="file" (change)="uploadImage($event)">
-
-
-
-      </div>
-      <div class="imgs">
-        <div *ngIf="images.length !==0;else loader">
-
-          <img (click)="datos(i)" *ngFor="let image of images;index as i" [src]="image" width="100" height="100">
-        </div>
-        <ng-template #loader>
-          <div class="spinner-border" role="status">
-            <span class="sr-only">Loading...</span>
-          </div>
-        </ng-template>
-
-      </div>
-    </div>
-
-
-
-   -->

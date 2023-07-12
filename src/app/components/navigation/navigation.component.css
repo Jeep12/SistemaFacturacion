@@ -434,7 +434,7 @@
 .user-dropdown-menu {
   position: absolute;
   top: 100%;
-  left: 0;
+  left: -45px;
   display: none;
   padding: 10px;
   background-color: var(--bg-nav);
