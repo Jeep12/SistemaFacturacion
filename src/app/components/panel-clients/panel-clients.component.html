@@ -1,1 +1,125 @@
-<p>panel-clients works!</p>
+<div class="search">
+  <div class="busqueda-menu">
+    <h3><i class="fa-solid fa-magnifying-glass"></i> Menú de Búsqueda</h3>
+    <div class="wrapper-inputs">
+      <select [(ngModel)]="searchSelect" (change)="optionSearch()">
+        <option value="nombre">Nombre de cliente</option>
+        <option value="edad">Edad</option>
+        <option value="numero">Numero</option>
+        <option value="email">Email</option>
+        <option value="direction">Direccion</option>
+        <option value="verificado">Verificado</option>
+      </select>
+
+      <input type="text" [(ngModel)]="searchText" placeholder="Búsqueda"><button
+        (click)="realizarBusqueda()">Búscar</button>
+        <hr>
+        <button (click)="showAll()">Mostrar Todo</button>
+      <!-- Agrega más opciones de búsqueda según tus necesidades -->
+    </div>
+  </div>
+  <div class="ordenamiento-menu">
+    <div class="order-checkboxes">
+      <h5>Ordenar por:</h5>
+      <div>
+        <label>
+          <input type="radio" [(ngModel)]="orderBy" [value]="'nombre'" (change)="ordenar()"> Nombre
+        </label>
+        <label>
+          <input type="radio" [(ngModel)]="orderBy" [value]="'edad'" (change)="ordenar()"> Edad
+        </label>
+        <label>
+          <input type="radio" [(ngModel)]="orderBy" [value]="'numero'" (change)="ordenar()"> Número
+        </label>
+        <!-- Resto de los radio buttons -->
+
+      </div>
+      <hr>
+      <div>
+        <label>
+          <input type="radio" [(ngModel)]="orderBy" [value]="'email'" (change)="ordenar()"> Email
+        </label>
+        <label>
+          <input type="radio" [(ngModel)]="orderBy" [value]="'direction'" (change)="ordenar()"> Direccion
+        </label>
+        <label>
+          <input type="radio" [(ngModel)]="orderBy" [value]="'verificado'" (change)="ordenar()"> Verificado
+        </label>
+        <label>
+          <input type="radio" [(ngModel)]="orderBy" [value]="'admin'" (change)="ordenar()"> Admin
+        </label>
+      </div>
+    </div>
+
+  </div>
+
+
+
+</div>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Nombre y Apellido</th>
+      <th>Email</th>
+      <th>Numero</th>
+      <th>Direccion</th>
+      <th>Año Nacimiento</th>
+      <th>Edad</th>
+      <th>Verificado</th>
+      <th>Rol</th>
+      <th>#</th>
+
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let usuario of users; let i = index">
+
+
+
+      <td>
+        <span *ngIf="usuario.getDisplayName()== '';else displayName ">-</span>
+        <ng-template #displayName>
+          <span [ngClass]="{'admin-row': usuario.isAdmin()}">
+            <i *ngIf="usuario.isAdmin()" class="fa-solid fa-user-shield"></i>
+            {{usuario.getDisplayName()}}
+          </span>
+        </ng-template>
+      </td>
+      <td>{{ usuario.getEmail() }}</td>
+      <td>{{ usuario.getPhoneNumber() }}</td>
+      <td>{{ usuario.getDirection() }}</td>
+      <td>{{usuario.getBirthdate()}}</td>
+      <td>{{ usuario.calcularEdad() }}</td>
+      <td><i *ngIf="usuario.getVerify();else notVerify" class="fa-solid fa-user-check"></i><ng-template #notVerify><i
+            class="fa-solid fa-user-xmark"></i></ng-template></td>
+      <td>{{usuario.getRol()}}</td>
+
+      <td>
+        <div class="dropdown" [ngClass]="{'open': showDropdownIndex === i}">
+          <button class="dropdown-trigger" (click)="toggleDropdown(i)"><i
+              class="fa-solid fa-ellipsis-vertical"></i></button>
+          <ul class="dropdown-menu" (click)="stopPropagation($event)">
+            <li>
+              <span *ngIf="usuario.getDisplayName()== '';else displayNameDropdown ">-</span>
+              <ng-template #displayNameDropdown>
+                {{usuario.getDisplayName()}}
+              </ng-template>
+              <span (click)="closeDropdown()" style="float: right;"><i class="fa-solid fa-x"></i></span>
+              <hr>
+            </li>
+            <li>
+              <h5>Otorgar privilegios</h5>
+
+              <button>Dar permisos</button>
+            </li>
+
+            <hr>
+            <li><button>Cargar Factura</button></li>
+          </ul>
+        </div>
+      </td>
+
+    </tr>
+  </tbody>
+
+</table>

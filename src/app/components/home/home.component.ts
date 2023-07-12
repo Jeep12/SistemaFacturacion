@@ -6,7 +6,6 @@ import { FacturaA } from 'src/app/Sistema/FacturaA';
 import { Usuario } from 'src/app/Sistema/Usuario';
 import { AuthService } from 'src/app/services/auth.service';
 import { FirestoreUsersService } from 'src/app/services/firestore-users.service';
-import { LoadScriptsService } from 'src/app/services/load-script.service';
 
 @Component({
   selector: 'app-home',
@@ -23,8 +22,8 @@ export class HomeComponent implements OnInit {
     private afAuth: AngularFireAuth,
     private auth: AuthService,
     private fsUser: FirestoreUsersService,
-    private loadScript: LoadScriptsService) {
-      this.loadScript.load(['carrousel']);
+   ) {
+
   }
 
   ngOnInit(): void {

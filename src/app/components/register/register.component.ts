@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
 import { AuthService } from 'src/app/services/auth.service';
-import { LoadScriptsService } from 'src/app/services/load-script.service';
 
 @Component({
   selector: 'app-register',
@@ -16,7 +15,6 @@ export class RegisterComponent implements OnInit {
   registerUser: FormGroup;
   constructor(
     private toastService: ToastrService,
-    private loadScript: LoadScriptsService,
     private fb: FormBuilder,
     private auth: AuthService)
   //Constructor init

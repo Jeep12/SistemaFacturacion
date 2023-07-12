@@ -7,7 +7,7 @@ export class Usuario {
   private email: string;
   private rol: string;
   private direction: string;
-  private birthdate: Date;
+  private birthdate: string;
   private phoneNumber: number;
   private facturas: Factura[];
 
@@ -18,7 +18,7 @@ export class Usuario {
     email?: string,
     rol?: string,
     direction?: string,
-    birthdate?: Date,
+    birthdate?: string,
     phoneNumber?: number
   ) {
     this.uid = uid || '';
@@ -27,17 +27,23 @@ export class Usuario {
     this.email = email || '';
     this.rol = rol || 'cliente';
     this.direction = direction || '';
-    this.birthdate = birthdate || new Date();
-    this.phoneNumber = phoneNumber || 0 ;
+    this.birthdate = birthdate || '';
+    this.phoneNumber = phoneNumber || 0;
     this.facturas = [];
   }
 
-  getVerify():boolean{
-    return this.isVerify;
-  }
-  isAdmin():boolean {
+  isAdmin(): boolean {
     return this.rol == "admin";
   }
+  getUid(): string {
+    return this.uid;
+  }
+
+
+  getVerify(): boolean {
+    return this.isVerify;
+  }
+
   setDisplayName(displayName: string): void {
     this.displayName = displayName;
   }
@@ -68,17 +74,34 @@ export class Usuario {
   }
 
 
-  getUid(): string {
-    return this.uid;
+
+  getBirthdate(): string {
+    return this.birthdate;
   }
+
   getEmail(): string {
     return this.email;
   }
   calcularEdad(): number {
-    const diff = Date.now() - this.birthdate.getTime();
-    const ageDate = new Date(diff);
-    return Math.abs(ageDate.getUTCFullYear() - 1970);
+    const today = new Date();
+    const birthdate = new Date(this.birthdate);
+
+    // Verificar si la fecha de nacimiento es válida
+    if (isNaN(birthdate.getTime())) {
+      return 0; // O devuelve un valor predeterminado
+    }
+
+    let age = today.getFullYear() - birthdate.getFullYear();
+    const monthDiff = today.getMonth() - birthdate.getMonth();
+
+    if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < birthdate.getDate())) {
+      age--;
+    }
+
+    return age;
   }
+
+
   addFactura(factura: Factura): void {
     const facturaExistente = this.facturas.find((f) => f.getId() === factura.getId());
     if (!facturaExistente) {
@@ -89,7 +112,7 @@ export class Usuario {
     // Retorna una copia del arreglo utilizando el operador spread (...)
     return [...this.facturas];
   }
-  public isComplete():boolean {
+  public isComplete(): boolean {
     return this.getDisplayName() != '' && this.getPhoneNumber() != 0 && this.getDirection() != '';
   }
   toString(): string {

@@ -6,6 +6,12 @@
   padding: 0;
   margin: 0;
 }
+:root {
+  --bg-btn-auth: white;
+  --color-btn-auth: #344C66;
+  --bg-nav: #344C66;
+  --color-nav: white;
+}
 
 /*
 body {
@@ -108,12 +114,7 @@ body::-webkit-scrollbar-track {
 
 @import url('https://fonts.googleapis.com/css2?family=Dongle:wght@300&family=Montserrat:ital,wght@1,100&family=PT+Sans:ital@1&display=swap');
 
-.slideInLeft {
-  -webkit-animation-name: slideInLeft;
-  -webkit-animation-duration: 1s;
-  -webkit-animation-fill-mode: both;
 
-}
 
 @-webkit-keyframes slideInLeft {
   0% {

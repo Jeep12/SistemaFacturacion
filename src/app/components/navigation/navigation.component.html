@@ -1,92 +1,114 @@
-<div class="wrapper-nav">
-
-  <div class="social">
-    <div class="logo">
-      <img src="../../../assets/images/logo.png" alt="" srcset="">
-    </div>
-    <div class="contact">
+<header>
+  <div class="pre_nav">
+    <div class="social">
       <ul>
-        <li style="text-decoration: underline;font-weight: bold;">Contacto</li>
-        <li><i class="fa-solid fa-envelope"></i> encabojuan@gmail.com</li>
-        <li><i class="fa-brands fa-whatsapp"></i>+54 011 2983-402258</li>
+        <li><i class="fa-brands fa-facebook"></i></li>
+        <li><i class="fa-brands fa-instagram"></i></li>
+        <li><i class="fa-brands fa-google"></i></li>
       </ul>
-
     </div>
-    <div class="socialNetworks">
-      <ul>
-        <li><i class="fa-brands fa-facebook-f"></i> Facebook</li>
-        <li><i class="fa-brands fa-google"></i> Google</li>
-        <li><i class="fa-brands fa-instagram"></i> Instagram</li>
-      </ul>
+    <div class="search">
+      <i class="fa-solid fa-cart-shopping" style="color: #ffffff;"></i> &nbsp; &nbsp; &nbsp; &nbsp;
+      <div class="wrapper-input">
+
+        <input type="text" placeholder="Buscar Productos">
+        <label for=""> <i class="fas fa-search"></i>
+        </label>
+      </div>
+    </div>
+    <div class="wrapper_logo_contact">
+      <div class="logo">
+        <img src="../../../assets/images/LOGO4.png" alt="" srcset="">
+        <h1>DUR COR</h1>
+        <h5>Electromecánica</h5>
+      </div>
+      <div class="contact">
+          <ul>
+            <li style="text-decoration: underline;">CONTACTO</li>
+            <li><i class="fa-solid fa-envelope" style="color: #344C66;"></i> Encabojuan@gmail.com</li>
+            <li><i class="fa-solid fa-phone"  style="color: #344C66;"></i> +54 011 2983 - 402258</li>
+          </ul>
+      </div>
     </div>
   </div>
+  <nav class="navbar navbar-expand-lg sticky-top">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">
+        <span class="text-dur">DUR</span>
+        <span class="text-cor">COR</span>
+      </a>
 
-
-  <header>
-    <div class="navigation">
-      <ul class="nav nav-tabs">
-        <li class="nav-item">
-          <a class="nav-link " aria-current="page"  [routerLink]="['/home']">Inicio</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link disabled">Nosotros</a>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button"
-            aria-expanded="false">Servicios</a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Electricidad</a></li>
-            <hr class="dropdown-divider">
-
-            <li><a class="dropdown-item" href="#">Vigia</a></li>
-            <hr class="dropdown-divider">
-
-            <li><a class="dropdown-item" href="#">Aire accondicionado</a></li>
-            <li>
-            </li>
-          </ul>
-        </li>
-        <li  *ngIf="isLoggedIn" class="nav-item">
-          <a class="nav-link "  [routerLink]="['/myaccount']">Mi cuenta</a>
-        </li>
-
-      </ul>
-    </div>
-
-
-    <div class="wrapper">
-      <div class="buttons">
-
-        <div  *ngIf="isLoggedIn; else loggedOutButtons">
-          <ul class="menu" >
-
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button"
-              aria-expanded="false">Menu</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0 menu ">
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" [routerLink]="['/home']">
+              <span class="menu-text">Inicio</span>
+              <i class="fas fa-home"></i>
+            </a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false">
+              <span class="menu-text drop-service">Servicios</span><i class="fa-solid fa-rectangle-list fa-fw"></i>
+            </a>
             <ul class="dropdown-menu">
-
-              <li><a class="dropdown-item"  [routerLink]="['/panelAdmin']" *ngIf="user.isAdmin()">Panel Admin</a></li>
-
-              <li><a class="dropdown-item" [routerLink]="['/configuration']">Configuracion</a></li>
-              <hr class="dropdown-divider">
-
-              <li><a class="dropdown-item" (click)="logout()">Salir</a></li>
-              <li>
-              </li>
+              <li><a class="dropdown-item" href="#">Electricidad</a></li>
+              <li><a class="dropdown-item" href="#">Refrigeracion</a></li>
+              <li><a class="dropdown-item" href="#">Colven</a></li>
             </ul>
           </li>
 
-
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="#">
+              <span class="menu-text">Nosotros</span>
+              <i class="fa-solid fa-users-between-lines"></i>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="#">
+              <span class="menu-text">Contacto</span>
+              <i class="fas fa-home"></i>
+            </a>
+          </li>
         </ul>
+        <div class="d-flex">
+          <div class="menu_user" *ngIf="isLoggedIn; else loggedOutButtons">
+            <div class="user-dropdown">
+              <input type="checkbox" id="user-dropdown-toggle" class="user-dropdown-toggle">
+              <label for="user-dropdown-toggle" class="user-dropdown-label">Menu</label>
+              <div class="user-dropdown-menu">
+                <a class="dropdown-item"  [routerLink]="['/panelAdmin']" *ngIf="user.isAdmin()">Panel Admin</a>
+                <hr  *ngIf="user.isAdmin()">
+                <a [routerLink]="['/configuration']" class="dropdown-item">Configuración</a>
+                <hr>
+
+                <a  type="button" class="dropdown-item" (click)="logout()">Salir</a>
+              </div>
+            </div>
+          </div>
+          <ng-template #loggedOutButtons>
+            <div class="d-flex wrapper-buttons">
+              <button [routerLink]="['/login']" class="btn-auth" style="width: 100px;">
+                <span class="btn-text">Entrar</span>
+                <div class="btn-icon">
+                  <i class="fa-solid fa-user"></i>
+                </div>
+              </button>
+              <button [routerLink]="['/register']" class="btn-auth" style="width: 140px;">
+                <span class="btn-text">Registrarse</span>
+                <div class="btn-icon">
+                  <i class="fas fa-user-plus"></i>
+                </div>
+              </button>
+            </div>
+          </ng-template>
+
         </div>
-
-        <ng-template #loggedOutButtons>
-          <!-- Mostrar botones "Sign Up" y "Sign In" si no está iniciada la sesión -->
-          <button [routerLink]="['/login']">Ingresar</button>
-          <button [routerLink]="['/register']">Registrarse</button>
-        </ng-template>
       </div>
-
     </div>
-  </header>
-</div>
+  </nav>
+</header>

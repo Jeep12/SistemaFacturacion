@@ -1,0 +1,23 @@
+<ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig" (init)="slickInit($event)"
+  (breakpoint)="breakpoint($event)" *ngIf="images.length != 0; else loader">
+
+
+  <div ngxSlickItem *ngFor="let slide of images" class="slide" >
+
+    <img [src]="slide" alt="">
+    <!--<div class="textSlide">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente in aut inventore iusto explicabo. Qui tempore
+      vitae deserunt voluptatibus incidunt?</div>
+    -->
+  </div>
+</ngx-slick-carousel>
+
+ <ng-template #loader >
+    <div class="template-content">
+      <!-- Contenido del ng-template -->
+      <div class="spinner-grow" role="status">
+        <span class="visually-hidden">Loading...</span>
+      </div>
+    </div>
+  </ng-template>
+

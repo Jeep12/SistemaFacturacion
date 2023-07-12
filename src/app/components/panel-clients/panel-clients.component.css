@@ -1,0 +1,102 @@
+
+.search {
+  background-color: white;
+  border-radius: 5px;
+  margin-top: 10px;
+  text-align: center;
+  padding: 10px;
+  display: flex;
+  flex-direction: row;
+}
+.search h3 {
+  font-size: 15px;
+}
+.wrapper-inputs {
+  margin: auto;
+  width: 200px;
+}
+.wrapper-inputs input {
+  width: 100%;
+
+
+}
+.wrapper-inputs button {
+  margin-top: 10px;
+  background-color: #1A314A;
+  color: white;
+  border: none;
+  padding: 5px;
+}
+.wrapper-inputs select {
+  width: 100%;
+}
+table {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-trigger {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 0;
+  right: 100%;
+  width: 220px;
+  background-color: #f9f9f9;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  list-style: none;
+  text-align: center;
+}
+
+.dropdown.open .dropdown-menu {
+  display: block;
+}
+
+.dropdown-menu li {
+  cursor: pointer;
+}
+.dropdown-menu li button {
+  border: none;
+  background-color: #1A314A;
+  padding: 5px;
+  color: white;
+  font-weight: 600;
+}
+h5{
+  font-size: 15px;
+}
+.dropdown-menu li:hover {
+  background-color: #eaeaea;
+}
+.admin-row {
+  background-color: rgb(22, 126, 22);
+  padding: 10px;
+  color: white;
+  border-radius: 3px;
+}
+.busqueda-menu {
+  width: 50%;
+}
+.ordenamiento-menu {
+  width: 50%;
+}
+.order-checkboxes {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+.order-checkboxes label {
+  padding: 10px;
+}

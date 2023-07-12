@@ -3,7 +3,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './components/login/login.component';
-import { LoadScriptsService } from './services/load-script.service';
 import { WelcomeComponent } from './components/welcome/welcome.component';
 import { RegisterComponent } from './components/register/register.component';
 import { environment } from 'src/environments/environment';
@@ -43,11 +42,13 @@ import { CardAirComponent } from './components/cards/card-air/card-air.component
 import { UploadArchComponent } from './components/upload-arch/upload-arch.component';
 import { AngularFireStorageModule } from '@angular/fire/compat/storage';
 import { CommonModule } from '@angular/common';
+import { BannerComponent } from './components/banner/banner.component';
+import { SlickCarouselModule } from 'ngx-slick-carousel';
 
 //environment.firebaseConfig
 @NgModule({
   declarations: [
-    
+
     AppComponent,
     LoginComponent,
     WelcomeComponent,
@@ -69,7 +70,8 @@ import { CommonModule } from '@angular/common';
     CardVigiaComponent,
     CardVigiaGomasComponent,
     CardAirComponent,
-    UploadArchComponent
+    UploadArchComponent,
+    BannerComponent
   ],
   imports: [
     CommonModule,
@@ -80,6 +82,7 @@ import { CommonModule } from '@angular/common';
     BrowserAnimationsModule, //  toastr required animations module
     ToastrModule.forRoot(),
     EditorModule,
+    SlickCarouselModule,
     AngularFirestoreModule,
     AngularFireStorageModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
@@ -94,7 +97,7 @@ import { CommonModule } from '@angular/common';
     FirestoreUsersService,
     FirestoreNoticesService,
     ErrorFirebaseService,
-    LoadScriptsService
+
   ],
   bootstrap: [AppComponent]
 })

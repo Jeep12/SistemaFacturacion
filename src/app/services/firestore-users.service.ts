@@ -3,16 +3,28 @@ import { QuerySnapshot, addDoc, collection, doc, getDocs, query, setDoc, updateD
 import { Firestore, collectionData } from '@angular/fire/firestore';
 import { Usuario } from '../Sistema/Usuario';
 import { Observable } from 'rxjs';
+import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/compat/firestore';
 
 @Injectable({
   providedIn: 'root'
 })
 export class FirestoreUsersService {
+  private usersCollection: AngularFirestoreCollection<any>;
+  public users: Observable<any[]>;
+  constructor(private firestore: Firestore,private AngFirestore: AngularFirestore) {
+    this.usersCollection = this.AngFirestore.collection('usuarios', (ref) => {
 
-  constructor(private firestore: Firestore) {
+      // Ordenar las noticias por la fecha de agregado en orden descendente
+      return ref;
+    });
 
+    this.users = this.usersCollection.valueChanges();
 
   }
+
+
+
+
   async addUser(user: any) {
     const uid: string | any = user.user?.uid;
     const email: string | any = user.user?.email;
@@ -62,7 +74,9 @@ export class FirestoreUsersService {
     const userDocRef = doc(this.firestore, 'usuarios', uid);
     await updateDoc(userDocRef, userData);
   }
-
+ getAllusers(): Observable<any[]> {
+  return this.users;
+  }
 }
 
 
