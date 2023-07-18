@@ -1,0 +1,30 @@
+<ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig" (init)="slickInit($event)"
+  (breakpoint)="breakpoint($event)" *ngIf="images.length != 0; else loader">
+
+
+  <div ngxSlickItem *ngFor="let slide of images" class="slide" >
+
+    <img [src]="slide"  (error)="handleImageError($event,slide)">
+    <!--<div class="textSlide">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente in aut inventore iusto explicabo. Qui tempore
+      vitae deserunt voluptatibus incidunt?</div>
+    -->
+  </div>
+  <button class="slick-prev slick-arrow" aria-label="Previous" type="button">Previous</button>
+</ngx-slick-carousel>
+
+ <ng-template #loader >
+    <div class="template-content">
+      <div class="loader-wrapper">
+        <div class="packman"></div>
+        <div class="dots">
+          <div class="dot"></div>
+          <div class="dot"></div>
+          <div class="dot"></div>
+          <div class="dot"></div>
+        </div>
+      </div>
+
+    </div>
+  </ng-template>
+

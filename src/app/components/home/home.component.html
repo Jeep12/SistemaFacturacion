@@ -1,4 +1,95 @@
 <div class="row banner">
   <app-banner></app-banner>
 </div>
+<div class="info">
 
+
+  <div class="horas item-info">
+    <div>
+
+      <i class="fa-solid fa-clock"></i>
+      <ul>
+        <li>Horarios</li>
+        <li class="subtitle">De lunes a viernes 8:00 a 20:00</li>
+      </ul>
+    </div>
+
+  </div>
+  <div class="tarjetas item-info">
+    <div>
+
+      <i class="fa-regular fa-credit-card"></i>
+      <ul>
+        <li>TARJETAS DE CRÉDITO Y DÉBITO</li>
+        <li class="subtitle">Promociones y ofertas</li>
+      </ul>
+    </div>
+  </div>
+  <div class="atencion item-info">
+    <div>
+
+      <i class="fa-solid fa-comments"></i>
+      <ul>
+        <li>ATENCÍON AL CLIENTE</li>
+        <li class="subtitle">Todos los dias del año</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<h3 class="titleServices">Servicio oficial Colven</h3>
+<br>
+
+  <div class="servicesColven">
+
+    <div class="card">
+      <app-card [type]="'VigiaGomas'"></app-card>
+    </div>
+
+    <div class="card">
+      <app-card [type]="'VigiaMotor'"></app-card>
+    </div>
+
+    <div class="card">
+      <app-card [type]="'viesa'"></app-card>
+    </div>
+  </div>
+  <h3 class="servicesTittle">Nuestros servicios</h3>
+<br>
+
+  <div class="services">
+    <div class="card">
+      <app-card [type]="'Electricidad'"></app-card>
+    </div>
+    <div class="card">
+      <app-card [type]="'refrigeracion'"></app-card>
+    </div>
+    <div class="card">
+      <app-card [type]="'agro'"></app-card>
+    </div>
+
+
+
+
+</div>
+
+<hr>
+
+
+<div class="containerNP">
+  <div class="wrapper-notices">
+    <h5>Ultimas Noticias</h5>
+    <hr>
+    <app-notices></app-notices>
+
+  </div>
+  <div class="wrapper-promociones">
+    <h5>Promociones</h5>
+    <ul class="listPromotions">
+      <li><img src="../../../assets/images/promocion.jpg" alt="" srcset=""></li>
+      <hr>
+      <li><img src="../../../assets/images/focopromotion.jpg" alt="" srcset=""></li>
+
+    </ul>
+  </div>
+</div>

@@ -10,7 +10,7 @@
   flex-direction: row;
   color: #362E3D !important;
   flex-wrap: wrap;
-  background-color: rgb(240, 240, 240);
+  background-color: #DCDCDC;
   height: 200px;
 }
 
@@ -85,7 +85,7 @@
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  background-color: rgb(240, 240, 240);
+  background-color: #DCDCDC;
 }
 
 

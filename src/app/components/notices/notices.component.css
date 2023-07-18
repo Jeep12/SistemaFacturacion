@@ -11,3 +11,37 @@ h5 {
   font-size: 13px;
   margin-left: 40px;
 }
+.pagination a{
+  color: #344C66 !important;
+  cursor: pointer;
+
+
+}
+.prev.disabled a {
+  background-color: #dddddd !important;
+  color: #999999 !important;
+}
+
+.prev a {
+  background-color: #344C66 !important;
+  color: white !important;
+}
+.page-item .selected  {
+  background-color: #344C66 !important;
+  color: white !important;
+  border: none !important;
+}
+
+.last.disabled a {
+  background-color: #dddddd !important;
+  color: #999999 !important;
+}
+
+.last a {
+  background-color: #344C66 !important;
+  color: white !important;
+}
+.custom-page-link.active {
+  background-color: #344C66;
+  color: white;
+}

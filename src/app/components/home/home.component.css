@@ -1,55 +1,144 @@
-.banner {
-}
-
-.wrapper {
+.info {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-
+  margin-top: 10px;
+  background-color: #DCDCDC;
 }
-.wrapper-services{
-  width: 70%;
+
+.info div {
+  width: 32%;
+  margin-left: 10px;
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
   align-items: center;
   justify-content: center;
+  flex-wrap: wrap;
+
+
 }
-.wrapper-services h3 {
+
+.item-info div {
+  width: 80%;
+}
+
+.item-info div ul {
+  margin-top: 10px;
+}
+
+.item-info div ul .subtitle {
+  font-size: 9px;
+  color: rgb(46, 46, 46);
+}
+
+.item-info div ul li {
+  list-style: none;
+  font-weight: 760;
+  font-size: 14px;
+
+}
+
+.item-info div i {
+  font-size: 40px;
+}
+
+.item-info div i,
+.item-info div ul li .subtitle {
+  color: #344C66;
+}
+
+.wrapper-services {
+
+}
+.servicesColven {
   width: 100%;
-  background-color: #344C66;
-  text-align: center;
-  color: white;
-}
-.card {
-  margin-left: 20px;
-}
-
-.wrapper-notices {
-  width: 30%;
-  height: 600px;
-  overflow-y: scroll;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-top: 60px !important;
 
 }
-.wrapper-notices h3 {
+
+
+.servicesColven .card {
+  margin-left: 75px;
+}
+.services {
   width: 100%;
-  background-color: #344C66;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-top: 60px !important;
   text-align: center;
-  color: white;
-}
-.wrapper-notices::-webkit-scrollbar {
-  /* Estilos para navegadores basados en WebKit, como Chrome y Safari */
-  background-color: #f2f2f2; /* Color de fondo de la barra de desplazamiento */
 
 }
-
-.wrapper-notices::-webkit-scrollbar-thumb {
-  /* Estilos para el pulgar de la barra de desplazamiento en navegadores basados en WebKit */
-  background-color: #1A314Aed;
-
+.services .card {
+  margin-right: 75px;
 }
 
-.wrapper-notices::-webkit-scrollbar-track {
-  /* Estilos para el fondo de la barra de desplazamiento en navegadores basados en WebKit */
+.titleServices {
   background-color: #344C66;
+  width: 300px;
+  float: left;
+  text-align: center;
+  margin-top: 15px;
+  margin-bottom: -10px;
+  font-weight: 700;
+  color: white;
+  padding: 5px;
+}
+.servicesTittle {
+  background-color: #344C66;
+  width: 300px;
+  float: right;
+  text-align: center;
+  margin-top: 15px;
+  margin-bottom: -10px;
+  font-weight: 700;
+  color: white;
+  padding: 5px;
+}
+
+
+
+.containerNP {
+  display: flex;
+  text-align: center;
+}
+.containerNP
+.wrapper-promociones{
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #344C66;
+}
+
+.containerNP .wrapper-notices {
+  padding: 25px;
+  width: 60%;
+}
+.wrapper-notices h5 {
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #344C66;
+  text-align: left;
+}
+
+.containerNP .wrapper-promociones {
+  width: 40%;
+}
+.listPromotions li {
+  list-style: none;
+}
+.listPromotions li img {
+  width: 80%;
+  height: 350px;
+  display: block;
+  margin: auto;
+}
+@media only screen and (max-width: 980px) {
+  .services,.servicesColven {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
 }

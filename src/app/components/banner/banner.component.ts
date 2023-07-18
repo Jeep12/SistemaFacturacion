@@ -20,7 +20,6 @@ export class BannerComponent implements OnInit {
       for (let item of response.items) {
         const url = await getDownloadURL(item);
         this.images.push(url);
-        console.log(this.images);
 
       }
     }).catch(error => {
@@ -44,18 +43,14 @@ export class BannerComponent implements OnInit {
 
 
   slickInit(e: any) {
-    console.log('slick initialized');
   }
 
   breakpoint(e: any) {
-    console.log('breakpoint');
   }
 
   afterChange(e: any) {
-    console.log('afterChange');
   }
 
   beforeChange(e: any) {
-    console.log('beforeChange');
   }
 }

@@ -1,10 +1,22 @@
 <div>
-
   <div *ngFor="let noticia of notices">
     <h5>{{ noticia.titulo }} <span class="fecha"> Fecha:{{ noticia.date }} </span></h5>
     <div [innerHTML]="sanitizeHtml(noticia.descripcion)"></div>
-
-    <p class="author">Publiclado por Dur Cor</p>
+    <p class="author">Publicado por Dur Cor</p>
     <hr>
   </div>
+
+  <nav *ngIf="totalPages > 1" aria-label="Page navigation example">
+    <ul class="pagination justify-content-center">
+      <li class="page-item prev" [class.disabled]="!hasPreviousPage()" [ngClass]="{'active': currentPage === 1}">
+        <a class="page-link" (click)="goToPreviousPage()">Anterior</a>
+      </li>
+      <li class="page-item" *ngFor="let pageNumber of getPageNumbers()" [class.active]="pageNumber === getCurrentPage()">
+        <a class="page-link" (click)="goToPage(pageNumber)"  [ngClass]="{'selected': pageNumber === getCurrentPage()}">{{ pageNumber }}</a>
+      </li>
+      <li class="page-item last" [class.disabled]="!hasNextPage()" [ngClass]="{'active': currentPage === totalPages}">
+        <a class="page-link" (click)="goToNextPage()">Siguiente</a>
+      </li>
+    </ul>
+  </nav>
 </div>

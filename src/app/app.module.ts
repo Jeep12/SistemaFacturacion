@@ -34,16 +34,15 @@ import { PanelClientsComponent } from './components/panel-clients/panel-clients.
 import { PanelTicketsComponent } from './components/panel-tickets/panel-tickets.component';
 import { EditorModule } from '@tinymce/tinymce-angular';
 import { FirestoreNoticesService } from './services/firestore-notices.service';
-import { CarrouselHomeComponent } from './components/carrousel-home/carrousel-home.component';
-import { CardViesaComponent } from './components/cards/card-viesa/card-viesa.component';
-import { CardVigiaComponent } from './components/cards/card-vigia/card-vigia.component';
-import { CardVigiaGomasComponent } from './components/cards/card-vigia-gomas/card-vigia-gomas.component';
-import { CardAirComponent } from './components/cards/card-air/card-air.component';
+
 import { UploadArchComponent } from './components/upload-arch/upload-arch.component';
 import { AngularFireStorageModule } from '@angular/fire/compat/storage';
 import { CommonModule } from '@angular/common';
 import { BannerComponent } from './components/banner/banner.component';
 import { SlickCarouselModule } from 'ngx-slick-carousel';
+import { CardComponent } from './components/card/card.component';
+import { CarouselComponent } from './components/card/carousel/carousel.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 //environment.firebaseConfig
 @NgModule({
@@ -65,13 +64,11 @@ import { SlickCarouselModule } from 'ngx-slick-carousel';
     PanelNoticeComponent,
     PanelClientsComponent,
     PanelTicketsComponent,
-    CarrouselHomeComponent,
-    CardViesaComponent,
-    CardVigiaComponent,
-    CardVigiaGomasComponent,
-    CardAirComponent,
     UploadArchComponent,
-    BannerComponent
+    BannerComponent,
+    CardComponent,
+    CarouselComponent,
+    FooterComponent
   ],
   imports: [
     CommonModule,
