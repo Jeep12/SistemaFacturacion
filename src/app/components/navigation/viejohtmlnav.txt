@@ -1,0 +1,96 @@
+<header>
+  <div class="prenav">
+    <div class="col social">
+      <ul>
+        <li><i class="fa-brands fa-facebook"></i></li>
+        <li><i class="fa-brands fa-instagram"></i></li>
+        <li><i class="fa-brands fa-google"></i></li>
+      </ul>
+    </div>
+    <div class="col search">
+      <input type="text" class="search-input" placeholder="Buscar...">
+      <button class="search-button">Buscar</button>
+    </div>
+
+  </div>
+  <nav class="navbar navbar-expand-lg">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">
+        <span class="text-dur">DUR</span>
+        <span class="text-cor">COR</span>
+      </a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0 menu ">
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" [routerLink]="['/home']">
+              <span class="menu-text">Inicio</span>
+              <i class="fas fa-home"></i>
+            </a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false">
+              <span class="menu-text drop-service">Servicios</span><i class="fa-solid fa-rectangle-list fa-fw"></i>
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Electricidad</a></li>
+              <li><a class="dropdown-item" href="#">Refrigeracion</a></li>
+              <li><a class="dropdown-item" href="#">Colven</a></li>
+            </ul>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="#">
+              <span class="menu-text">Nosotros</span>
+              <i class="fa-solid fa-users-between-lines"></i>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="#">
+              <span class="menu-text">Contacto</span>
+              <i class="fas fa-home"></i>
+            </a>
+          </li>
+        </ul>
+        <div class="d-flex">
+          <div class="menu_user" *ngIf="isLoggedIn; else loggedOutButtons">
+            <div class="user-dropdown">
+              <input type="checkbox" id="user-dropdown-toggle" class="user-dropdown-toggle">
+              <label for="user-dropdown-toggle" class="user-dropdown-label"><i class="fa-solid fa-bars"></i></label>
+              <div class="user-dropdown-menu">
+                <a class="dropdown-item"  [routerLink]="['/panelAdmin']" *ngIf="user.isAdmin()"><i class="fa-solid fa-screwdriver-wrench"></i> Panel Admin</a>
+                <hr  *ngIf="user.isAdmin()">
+                <a [routerLink]="['/configuration']" class="dropdown-item"><i class="fa-solid fa-user-gear"></i> Mi Cuenta</a>
+                <hr>
+
+                <a  type="button" class="dropdown-item" (click)="logout()"><i class="fa-solid fa-right-from-bracket"></i> Salir</a>
+              </div>
+            </div>
+          </div>
+          <ng-template #loggedOutButtons>
+            <div class="d-flex wrapper-buttons">
+              <button [routerLink]="['/login']" class="btn-auth" style="width: 100px;">
+                <span class="btn-text">Entrar</span>
+                <div class="btn-icon">
+                  <i class="fa-solid fa-user"></i>
+                </div>
+              </button>
+              <button [routerLink]="['/register']" class="btn-auth" style="width: 140px;">
+                <span class="btn-text">Registrarse</span>
+                <div class="btn-icon">
+                  <i class="fas fa-user-plus"></i>
+                </div>
+              </button>
+            </div>
+          </ng-template>
+
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>

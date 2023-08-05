@@ -1,114 +1,48 @@
 <header>
-  <div class="pre_nav">
-    <div class="social">
-      <ul>
-        <li><i class="fa-brands fa-facebook"></i></li>
-        <li><i class="fa-brands fa-instagram"></i></li>
-        <li><i class="fa-brands fa-google"></i></li>
-      </ul>
+  <div class="prenav">
+    <div class="col logo">
+
+      <h4>
+        <span>DUR</span>
+        &nbsp;
+        <i class="fa-solid fa-screwdriver-wrench"></i>
+        &nbsp;
+        <span>COR</span>
+      </h4>
     </div>
-    <div class="search">
-      <i class="fa-solid fa-cart-shopping" style="color: #ffffff;"></i> &nbsp; &nbsp; &nbsp; &nbsp;
+    <div class="col social">
+
+      <div class="fb-like" data-href="https://www.facebook.com/durquetg/" data-colorscheme="dark" data-width=""
+        data-layout="" data-action="" data-size="" data-share="true"></div>
+
+    </div>
+    <div class="col search">
       <div class="wrapper-input">
+        <input type="text" class="search-input" placeholder="Buscar productos o servicios" list="lista-frutas">
+        <button class="search-button"><i class="fa-solid fa-magnifying-glass"></i></button>
+        <datalist id="lista-frutas">
+          <option value="Focos">
+          <option value="Baterias">
+          <option value="Servicio al agro">
+          <option value="Bobina">
+            <!-- Agrega más opciones según sea necesario -->
+        </datalist>
+      </div>
+    </div>
 
-        <input type="text" placeholder="Buscar Productos">
-        <label for=""> <i class="fas fa-search"></i>
-        </label>
-      </div>
-    </div>
-    <div class="wrapper_logo_contact">
-      <div class="logo">
-        <img src="../../../assets/images/LOGO4.png" alt="" srcset="">
-        <h1>DUR COR</h1>
-        <h5>Electromecánica</h5>
-      </div>
-      <div class="contact">
-          <ul>
-            <li style="text-decoration: underline;">CONTACTO</li>
-            <li><i class="fa-solid fa-envelope" style="color: #344C66;"></i> Encabojuan@gmail.com</li>
-            <li><i class="fa-solid fa-phone"  style="color: #344C66;"></i> +54 011 2983 - 402258</li>
-          </ul>
-      </div>
-    </div>
   </div>
-  <nav class="navbar navbar-expand-lg sticky-top">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#">
-        <span class="text-dur">DUR</span>
-        <span class="text-cor">COR</span>
-      </a>
 
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <i class="fa-solid fa-bars"></i>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0 menu ">
-          <li class="nav-item">
-            <a class="nav-link" aria-current="page" [routerLink]="['/home']">
-              <span class="menu-text">Inicio</span>
-              <i class="fas fa-home"></i>
-            </a>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-              aria-expanded="false">
-              <span class="menu-text drop-service">Servicios</span><i class="fa-solid fa-rectangle-list fa-fw"></i>
-            </a>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Electricidad</a></li>
-              <li><a class="dropdown-item" href="#">Refrigeracion</a></li>
-              <li><a class="dropdown-item" href="#">Colven</a></li>
-            </ul>
-          </li>
-
-          <li class="nav-item">
-            <a class="nav-link" aria-current="page" href="#">
-              <span class="menu-text">Nosotros</span>
-              <i class="fa-solid fa-users-between-lines"></i>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" aria-current="page" href="#">
-              <span class="menu-text">Contacto</span>
-              <i class="fas fa-home"></i>
-            </a>
-          </li>
-        </ul>
-        <div class="d-flex">
-          <div class="menu_user" *ngIf="isLoggedIn; else loggedOutButtons">
-            <div class="user-dropdown">
-              <input type="checkbox" id="user-dropdown-toggle" class="user-dropdown-toggle">
-              <label for="user-dropdown-toggle" class="user-dropdown-label"><i class="fa-solid fa-bars"></i></label>
-              <div class="user-dropdown-menu">
-                <a class="dropdown-item"  [routerLink]="['/panelAdmin']" *ngIf="user.isAdmin()"><i class="fa-solid fa-screwdriver-wrench"></i> Panel Admin</a>
-                <hr  *ngIf="user.isAdmin()">
-                <a [routerLink]="['/configuration']" class="dropdown-item"><i class="fa-solid fa-user-gear"></i> Mi Cuenta</a>
-                <hr>
-
-                <a  type="button" class="dropdown-item" (click)="logout()"><i class="fa-solid fa-right-from-bracket"></i> Salir</a>
-              </div>
-            </div>
-          </div>
-          <ng-template #loggedOutButtons>
-            <div class="d-flex wrapper-buttons">
-              <button [routerLink]="['/login']" class="btn-auth" style="width: 100px;">
-                <span class="btn-text">Entrar</span>
-                <div class="btn-icon">
-                  <i class="fa-solid fa-user"></i>
-                </div>
-              </button>
-              <button [routerLink]="['/register']" class="btn-auth" style="width: 140px;">
-                <span class="btn-text">Registrarse</span>
-                <div class="btn-icon">
-                  <i class="fas fa-user-plus"></i>
-                </div>
-              </button>
-            </div>
-          </ng-template>
-
-        </div>
-      </div>
+  <nav>
+    <div class="menu">
+      <div class="menu-item">Inicio</div>
+      <div class="menu-item">Servicios</div>
+      <div class="menu-item">Contacto</div>
+      <div class="menu-item">Nosotros</div>
+    </div>
+    <div class="button-container">
+      <div class="button">Ingresar</div>
+      <div class="button">Registrarse</div>
     </div>
   </nav>
+
 </header>
